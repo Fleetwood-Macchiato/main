@@ -1,6 +1,6 @@
-var express = require('express');
+const express = require('express');
 
-var logger = require('morgan');
+const logger = require('morgan');
 
 const cookieParser = require("cookie-parser");
 
