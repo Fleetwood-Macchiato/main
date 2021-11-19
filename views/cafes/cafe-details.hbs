@@ -1,0 +1,14 @@
+<h2>Cafes Details</h2>
+<a href="/">HOME</a>
+<a href="/cafes">Go Back</a>
+<a href="/cafes/create">Add a New Cafe!</a>
+<ul>
+  {{#each all}}
+    <li>
+      <p>Name: {{name}}</p>
+      <p>Address: {{address}}</p>
+      <p>Price Level: {{priceLevel}}</p>
+      <p>Image: {{image}}</p>
+    </li>
+  {{/each}}
+</ul>

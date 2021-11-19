@@ -4,7 +4,7 @@
 
 ## Description
 
-Sick of the same Dolce Gusto coffee? Starbucks messed up your order again or you simply want to know wheres the best brew in town? ☕️ Hundreds of options await you in Barcelona and at home. //INSERT PROJECT NAME// will help you source your next favorite beans or spot on Barcelona to brew the perfect coffee! Add your favourites ❤️ , leave ratings 💯 and filter by preferences 🤓
+Sick of the same Dolce Gusto coffee? Starbucks messed up your order again or you simply want to know wheres the best brew in town? ☕️ Hundreds of options await you in Barcelona and at home. //INSERT PROJECT NAME// will help you source your next favorite beans or spot in Barcelona to brew the perfect coffee! Add your favourites ❤️ , leave ratings 💯 and filter by preferences 🤓
 
 ## User Stories
 
@@ -76,6 +76,7 @@ List of other features outside of the MVPs scope:
 ## Models
 
 (NEED TO CHECK IF ALL OF THESE ARE NECESSARY)
+
 
 ```
 User model
