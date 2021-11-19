@@ -7,9 +7,9 @@ const Cafe = require('../models/Cafes.model')
 // ℹ️ Sets the MongoDB URI for our app to have access to it.
 // If no env has been set, we dynamically set it to whatever the folder name was upon the creation of the app
 
-const MONGO_URL = `${process.env.MONGODB_URI}`;
+const MONGO_URL = process.env.MONGODB_URI;
 
-console.log("MONGO_URL: ", MONGO_URL)
+console.log("MONGO_URL: ", MONGO_URL);
 mongoose
   .connect(MONGO_URL, {
     useNewUrlParser: true,
@@ -18,7 +18,9 @@ mongoose
     useCreateIndex: true
   })
   .then((x) => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
   })
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
