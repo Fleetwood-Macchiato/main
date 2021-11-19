@@ -5,6 +5,8 @@ const express = require("express");
 
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/user");
+const cafesRouter = require("./routes/cafes.routes");
+
 
 const app = express();
 
@@ -14,6 +16,8 @@ require("./config/global")(app);
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use("/", cafesRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
