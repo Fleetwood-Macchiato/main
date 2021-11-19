@@ -34,8 +34,10 @@ module.exports = (app) => {
   app.use(express.static(path.join(__dirname, "..", "public")));
 
   // Handles access to the favicon
+  app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico"))
+  );
+  
   app.use(
-<<<<<<< HEAD
 		session({
 			secret: 'Globtrotters-secret',
 			resave: false,
@@ -48,10 +50,7 @@ module.exports = (app) => {
 			})
 		})
 	);
-=======
-    favicon(path.join(__dirname, "..", "public", "images", "favicon.ico"))
-  );
->>>>>>> c68c83b9e08bc2082e78469c1723306ca4176ac8
+
 
   app.use(
     session({
