@@ -4,13 +4,13 @@
 
 ## Description
 
-Sick of the same Dolce Gusto coffee? Starbucks messed up your order again or you simply want to know wheres the best brew in town? ☕️ Hundreds of options await you in Barcelona and //INSERT PROJECT NAME// will help you source your next favorite spot! Add your favourites ❤️ leave ratings 💯 and filter by preferences 🤓
+Sick of the same Dolce Gusto coffee? Starbucks messed up your order again or you simply want to know wheres the best brew in town? ☕️ Hundreds of options await you in Barcelona and at home. //INSERT PROJECT NAME// will help you source your next favorite beans or spot on Barcelona to brew the perfect coffee! Add your favourites ❤️ , leave ratings 💯 and filter by preferences 🤓
 
 ## User Stories
 
 - **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault
 - **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
-- **homepage** - As a user I want to be able to access the homepage so that I can see what the app is about, login and signup
+- **homepage** - As a user I want to be able to access the homepage so that I can see what the app is about
 - **sign up** - As a user I want to sign up on the webpage so that I can see all the coffee spots that fit what I'm looking for
 - **login** - As a user I want to be able to log in on the webpage so that I can get back to my account and save my favourites and leave reviews
 - **logout** - As a user I want to be able to log out from the webpage so that I can make sure no one will access my account
@@ -21,14 +21,14 @@ Sick of the same Dolce Gusto coffee? Starbucks messed up your order again or you
 
 ## Backlog
 
-List of other features outside of the MVPs scope
+List of other features outside of the MVPs scope:
 
-TBD
+- Adding map feature for nearest cafe based on preferences
 
 ## ROUTES:
 
 - GET /
-  - renders the homepage
+  - renders the homepage, where user can choose to search by beans or cafes
 - GET /auth/signup
   - redirects to / if user logged in
   - renders the signup form (with flash msg)
@@ -50,9 +50,9 @@ TBD
 
   - body: (empty)
 
-- GET /coffee-spots
+- GET /cafes
   - renders the cafe list + add to favorites function
-- POST /coffee-spot/create-rating
+- POST /cafes/create-rating
   - redirects to / if user is anonymous
   - body:
     - cafe name
@@ -62,11 +62,20 @@ TBD
   - includes the list of drinks, location, price points
   - add to favourites button & leave rating/create review buttom
 - POST /cafe/:id/rating
+
   - redirects to / if user is anonymous
   - body: (empty - the user is already stored in the session)
 
+- GET /beans
+  - renders the beans list + add to favorites function
+- GET /beans/:id
+  - renders the beans detail page
+  - includes the list of beans, farmers, flavor profiles
+  - add to favourites button & leave rating/create review buttom
+
 ## Models
 
+(NEED TO CHECK IF ALL OF THESE ARE NECESSARY)
 User model
 
 ```
@@ -75,6 +84,20 @@ username: String,
 email: String,
 password: String,
 
+}
+
+Cafes model
+{
+cafeName: String,
+location: String,
+priceLevel: Number,
+}
+
+Beans model
+{
+beanName: String,
+farmer: String,
+flavorProfile: String,
 }
 
 Favorites model
@@ -92,18 +115,17 @@ rating: Number,
 
 ```
 
-
 ## Links
 
-### Trello
+### Project planning
 
-[Link to your trello board](https://trello.com) or picture of your physical board
+[Link to our GitHub project board](https://github.com/Fleetwood-Macchiato/main/projects/1)
 
 ### Git
 
 The url to your repository and to your deployed project
 
-[Repository Link](http://github.com)
+[Repository Link](https://github.com/Fleetwood-Macchiato/)
 
 [Deploy Link](http://heroku.com)
 
@@ -112,4 +134,7 @@ The url to your repository and to your deployed project
 The url to your presentation slides
 
 [Slides Link](http://slides.com)
+
+```
+
 ```
