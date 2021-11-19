@@ -34,9 +34,23 @@ module.exports = (app) => {
   app.use(express.static(path.join(__dirname, "..", "public")));
 
   // Handles access to the favicon
-  app.use(
-    favicon(path.join(__dirname, "..", "public", "images", "favicon.ico"))
+  app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico"))
   );
+  
+  app.use(
+		session({
+			secret: 'Globtrotters-secret',
+			resave: false,
+			saveUninitialized: true,
+			cookie: {
+				maxAge: 24 * 60 * 60 * 1000
+			},
+			store: MongoStore.create({
+				mongoUrl: process.env.MONGODB_URI
+			})
+		})
+	);
+
 
   app.use(
     session({
