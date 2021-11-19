@@ -83,8 +83,6 @@ cafeId: String,
 favorite: Boolean,
 }
 
-```
-
 Ratings model
 {
 cafeId: String,
