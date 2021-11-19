@@ -76,9 +76,10 @@ List of other features outside of the MVPs scope:
 ## Models
 
 (NEED TO CHECK IF ALL OF THESE ARE NECESSARY)
-User model
+
 
 ```
+User model
 {
 username: String,
 email: String,
