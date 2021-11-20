@@ -1,7 +1,12 @@
 <a href="/">HOME</a>
-<a href="/signup">Don't have an account? Create an account.</a>
+<p>
+  Don't have an account?
+  <a href="/signup">
+    Sign me up!
+  </a>
+</p>
 
-<form action="/users/login" method="post">
+<form action="/auth/login" method="post">
   <label for="username">Username:</label>
   <input
     required
