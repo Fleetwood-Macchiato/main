@@ -6,6 +6,9 @@ const cafeSchema = new Schema({
   address: String,
   priceLevel: { type: String },
   image: String,
+  //review:[{
+  //         user: String,
+  //       comments: String]}
 });
 
 // const Book = model('Book', bookSchema);
