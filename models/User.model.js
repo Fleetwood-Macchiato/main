@@ -16,7 +16,7 @@ const userSchema = new Schema({
     required: [true, "Email is required"],
     unique: true,
   },
-  // favorites: [{ type: Schema.Types.ObjectId, ref: 'Room', default: [] }]
+  // favorites: [{ type: Schema.Types.ObjectId, ref: 'Cafe', default: [] }]
 });
 
 const User = model("User", userSchema);

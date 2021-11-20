@@ -1,0 +1,21 @@
+<a href="/">HOME</a>
+<a href="/login">Already have an account? Log in.</a>
+
+<form action="/users/signup" method="post">
+
+  <label for="username">Username:</label>
+  <input
+    required
+    type="text"
+    name="username"
+    placeholder="type your username"
+  />
+
+  <label for="email">Email:</label>
+  <input required type="email" name="email" placeholder="type your email" />
+
+  <label for="password">Password:</label>
+  <input required type="password" name="password" placeholder="choose wisely" />
+
+  <button type="submit">Sign me up!</button>
+</form>
