@@ -15,4 +15,15 @@ router.get("/beans", async (req, res) => {
   }
 });
 
+router.get("/bean-details", async (req, res) => {
+  try {
+    let beanCafes = await Bean.find();
+    console.log("beans from db", beanCafes);
+
+    res.render("beans/bean-details", { beanCafes });
+  } catch (err) {
+    (err) => console.log(err);
+  }
+});
+
 module.exports = router;
