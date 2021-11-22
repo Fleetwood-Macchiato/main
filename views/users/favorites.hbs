@@ -1,0 +1,17 @@
+<h1>{{username}}'s favorites</h1>
+
+<ul>
+  {{#each favorites}}
+    <li>
+      <p>Name: {{name}}</p>
+      <p>Address: {{address}}</p>
+      <p>Price level: {{priceLevel}}</p>
+      <img src="{{image}}" />
+    </li>
+  {{/each}}
+</ul>
+
+
+<a href="/users/profile/{{user._id}}/">My profile</a>
+<a href="/cafes">Cafes</a>
+<a href="/home">HOME</a>
