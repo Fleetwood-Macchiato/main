@@ -4,9 +4,8 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.use(isLoggedIn);
 /* GET users listing. */
-router.get("/", function (req, res, next) {
+router.get("/profile", function (req, res, next) {
   res.send("respond with a resource");
 });
 
 module.exports = router;
-

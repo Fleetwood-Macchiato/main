@@ -4,18 +4,18 @@
 <a href="/cafes">Cafes</a>
 
 {{#if userLoggedIn}}
-  <a href="/user/user-profile/{{currentUserInfo._id}}">
+  <a href="/users/profile/{{currentUserInfo._id}}">
     <h2>Profile</h2>
   </a>
-  <a href="/user/add-cafe">
+  <a href="/cafes/add">
     <h2>Add Cafe</h2>
   </a>
-  <a href="/logout">
+  <a href="/auth/logout">
     <h2>Log Out</h2>
   </a>
 {{else}}
 
-<a href="/login"> Log In </a>
-<a href="/signup"> Sign Up </a>
+<a href="/auth/login"> Log In </a>
+<a href="/auth/signup"> Sign Up </a>
   </a>
 {{/if}}
