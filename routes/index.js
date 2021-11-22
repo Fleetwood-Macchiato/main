@@ -5,7 +5,7 @@ const User = require("../models/User.model");
 const Api = require("../apis/api");
 
 /* GET home page. */
-router.get("/", (req, res) => {
+router.get("/home", (req, res) => {
   User.find().then((users) =>
     res.render("index", { title: "Coffee Heaven", users })
   );

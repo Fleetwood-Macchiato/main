@@ -1,4 +1,4 @@
-<a href="/">HOME</a>
+<a href="/home">HOME</a>
 <p>
   Don't have an account?
   <a href="/signup">
@@ -6,7 +6,7 @@
   </a>
 </p>
 
-<form action="/auth/login" method="post">
+<form action="/login" method="post">
   <label for="username">Username:</label>
   <input
     required
@@ -25,3 +25,9 @@
 
   <button type="submit">Login</button>
 </form>
+{{#if errorMessage}}
+  <p>
+
+    {{errorMessage}}
+  </p>
+{{/if}}

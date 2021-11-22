@@ -1,3 +1,13 @@
-you got the fav of cafeS remove from fav button
+<h1>Profile</h1>
 
-<a href="/">HOME</a>
+{{username}}
+
+<form action="/auth/logout" method="GET">
+  <button type="submit">Logout</button>
+</form>
+<article>
+  <img src="{{user.image}}" alt="user image" />
+  <p><b>Name:</b> {{user.name}}</p>
+  <a href="/user/user-profile/{{user._id}}/edit">Edit</a>
+</article>
+<a href="/home">HOME</a>
