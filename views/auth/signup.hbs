@@ -4,7 +4,7 @@
   <a href="/login">Log in</a>
 </p>
 
-<form action="/auth/signup" method="post">
+<form action="/signup" method="post">
 
   <label for="username">Username:</label>
   <input
@@ -22,3 +22,9 @@
 
   <button type="submit">Sign me up!</button>
 </form>
+{{#if errorMessage}}
+  <p>
+
+    {{errorMessage}}
+  </p>
+{{/if}}
