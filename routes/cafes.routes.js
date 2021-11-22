@@ -4,7 +4,7 @@ const router = express.Router();
 // ********* require Book model in order to use it *********
 const Cafe = require("../models/Cafes.model");
 
-router.get("/cafes", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     let listCafes = await Cafe.find();
     console.log("cafes from db", listCafes);
