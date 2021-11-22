@@ -4,7 +4,7 @@ const router = express.Router();
 // ********* require Book model in order to use it *********
 const Bean = require("../models/Beans.model");
 
-router.get("beans/beans", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     let beanList = await Bean.find();
     console.log("beans from db", beanList);
