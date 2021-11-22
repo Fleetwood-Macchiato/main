@@ -45,10 +45,10 @@ router
           res.render("auth/login", { errorMessage: "User does not exist" });
         const isPwdCorrect = bcrypt.compareSync(password, user.password); // first password is one from the form. the second is the encrypted one from the database
         console.log(user);
-        if (isPwdCorrect) res.render("user/user-profile", user);
+        if (isPwdCorrect) res.redirect("/user-profile");
         else res.render("auth/login", { errorMessage: "User does not exist" });
       })
-      .catch(() => {});
+      .catch((err) => console.log(err));
   });
 
 module.exports = router;

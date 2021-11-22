@@ -1,21 +1,11 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const isLoggedIn = require('../middleware/isLoggedIn')
+const isLoggedIn = require("../middleware/isLoggedIn");
 
-
-router.use(isLoggedIn)
+router.use(isLoggedIn);
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get("/user-profile", function (req, res, next) {
+  res.render("user/user-profile");
 });
-
-
-
-
-
-
-
-
-
 
 module.exports = router;
