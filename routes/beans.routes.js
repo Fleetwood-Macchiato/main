@@ -20,7 +20,7 @@ router.get("/bean-details", async (req, res) => {
     let beanList = await Bean.find();
     console.log("beans from db", beanList);
 
-    res.redirect("beans/bean-details", { beanList });
+    res.render("beans/bean-details", { beanList });
   } catch (err) {
     (err) => console.log(err);
   }
