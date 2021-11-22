@@ -6,10 +6,10 @@ const Bean = require("../models/Beans.model");
 
 router.get("/beans", async (req, res) => {
   try {
-    let beanCafes = await Bean.find();
-    console.log("beans from db", beanCafes);
+    let beanList = await Bean.find();
+    console.log("beans from db", beanList);
 
-    res.render("beans/beans", { beanCafes });
+    res.render("beans/beans", { beanList });
   } catch (err) {
     (err) => console.log(err);
   }
@@ -17,10 +17,10 @@ router.get("/beans", async (req, res) => {
 
 router.get("/bean-details", async (req, res) => {
   try {
-    let beanCafes = await Bean.find();
-    console.log("beans from db", beanCafes);
+    let beanList = await Bean.find();
+    console.log("beans from db", beanList);
 
-    res.render("beans/bean-details", { beanCafes });
+    res.render("beans/bean-details", { beanList });
   } catch (err) {
     (err) => console.log(err);
   }
