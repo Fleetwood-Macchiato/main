@@ -1,6 +1,6 @@
-<h1>Profile</h1>
+<h1>Profile {{username}} </h1>
 
-{{username}}
+<br /><br />
 
 <form action="/auth/logout" method="GET">
   <button type="submit">Logout</button>
@@ -11,3 +11,7 @@
   <a href="/user/user-profile/{{user._id}}/edit">Edit</a>
 </article>
 <a href="/home">HOME</a>
+
+<div>
+  <a href="user/add-cafe">Add a new cafe</a>
+</div>
