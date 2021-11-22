@@ -7,7 +7,24 @@
     <p>Name: {{cafe.name}}</p>
     <p>Address: {{cafe.address}}</p>
     <p>Price level: {{cafe.priceLevel}}</p>
-    <p>Leave a review: </p>
+    <p>Leave a review:</p>
+    <label class="form-label" for="name-input">Username:</label>
+    <input
+      class="form-input"
+      type="text"
+      name="user"
+      id="user-input"
+      placeholder="Username"
+    />
+    <label class="form-label" for="review-input">Review:</label>
+    <textarea
+      class="form-input"
+      name="review"
+      id="review-input"
+      placeholder="Your review"
+    ></textarea>
+
+    <button type="submit"> add a review </button>
     <img src="{{cafe.image}}" />
 
   </li>
