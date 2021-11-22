@@ -1,0 +1,27 @@
+<a href="/">HOME</a>
+<p>
+  Don't have an account?
+  <a href="/signup">
+    Sign me up!
+  </a>
+</p>
+
+<form action="/auth/login" method="post">
+  <label for="username">Username:</label>
+  <input
+    required
+    type="text"
+    name="username"
+    placeholder="type your username"
+  />
+
+  <label for="password">Password:</label>
+  <input
+    required
+    type="password"
+    name="password"
+    placeholder="hope you remember it..."
+  />
+
+  <button type="submit">Login</button>
+</form>
