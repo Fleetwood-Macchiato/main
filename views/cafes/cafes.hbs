@@ -1,8 +1,8 @@
 <h1>Cafes</h1>
 <p>
-  {{#each listCafes}}
+  {{#each cafeList}}
     <ul>
-     <a href = "/cafes/cafe-details">{{name}}</a> 
+     <a href = "/cafes/cafe-details/{{id}}">{{name}}</a> 
      <img src="{{image}}"/>
     </ul>
   {{/each}}

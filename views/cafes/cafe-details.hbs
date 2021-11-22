@@ -2,14 +2,14 @@
 <a href="/cafes">Go Back</a>
 <a href="/cafes/create">Add a New Cafe!</a>
 <ul>
-  {{#each listCafes}}
-    <li>
-      <p>Name: {{name}}</p>
-      <p>Address: {{address}}</p>
-      <p>Price level: {{priceLevel}}</p>
-      <img src="{{image}}" />
-    </li>
-  {{/each}}
+
+  <li>
+    <p>Name: {{cafe.name}}</p>
+    <p>Address: {{cafe.address}}</p>
+    <p>Price level: {{cafe.priceLevel}}</p>
+    <img src="{{cafe.image}}" />
+  </li>
+
 </ul>
 <a href="/home">HOME</a>
 <a href="/login"> Log In </a>
