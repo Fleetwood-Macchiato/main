@@ -16,21 +16,34 @@
 
 
 <h2>Cafe Details</h2>
-<a href="/cafes/create">Add a New Cafe!</a>
+<a href="/cafes">Go Back</a>
+<a href="/cafes/add-cafe">Add a New Cafe!</a>
 <ul>
-  {{#each listCafes}}
-    <li>
-      <p>Name: {{name}}</p>
-      <p>Address: {{address}}</p>
-      <p>Price level: {{priceLevel}}</p>
-      <img src="{{image}}" /><br>
-       <button type="submit">
-     <!--    <form action="/users/favorites" method="post">
-  <label for="fname">First name:</label>-->
-         <img src="/images/heartlogo.jpeg" width="30px"/></button><br><br>
-    </li>
-  {{/each}}
+
+  <li>
+    <p>Name: {{cafe.name}}</p>
+    <p>Address: {{cafe.address}}</p>
+    <p>Price level: {{cafe.priceLevel}}</p>
+    <p>Leave a review:</p>
+    <label class="form-label" for="name-input">Username:</label>
+    <input
+      class="form-input"
+      type="text"
+      name="user"
+      id="user-input"
+      placeholder="Username"
+    />
+    <label class="form-label" for="review-input">Review:</label>
+    <textarea
+      class="form-input"
+      name="review"
+      id="review-input"
+      placeholder="Your review"
+    ></textarea>
+
+    <button type="submit"> add a review </button>
+    <img src="{{cafe.image}}" />
+
+  </li>
+
 </ul>
-<a href="/home">HOME</a>
-<a href="/login"> Log In </a>
-<a href="/signup"> Sign Up </a>

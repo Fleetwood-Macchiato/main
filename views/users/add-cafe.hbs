@@ -22,23 +22,26 @@ sends the user back to cafe lists
 
 <h2>Add New Cafe!</h2>
 
-<form action="/cafes/create" method="POST">
+<form action="/cafes/add-cafe" method="POST">
 
-  <label for="cafe-name">Cafe name:</label>
-  <input type="text" name="cafe-name" />
+  <label for="name">Cafe name:</label>
+  <input type="text" name="name" />
 
   <label for="review">A few words:</label>
   <input type="text" name="review" />
 
-  <label for="location">Location:</label>
-  <input type="text" name="location" />
+  <label for="address">Location:</label>
+  <input type="text" name="address" />
 
   <label for="picture">Picture:</label>
   <input type="image" name="picture" />
 
+  <label for="priceLevel">Price Level:</label>
+  <input type="text" name="priceLevel" />
+
   <div>
     <p>Select the beans:</p>
-    {{#each allBeans}}
+    {{#each beanList}}
       <input type="checkbox" name="beans" value={{_id}} />
       <label for="beans"> {{name}}</label><br />
     {{/each}}
