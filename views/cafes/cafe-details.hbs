@@ -1,14 +1,16 @@
-<h2>Cafes Details</h2>
-<a href="/">HOME</a>
+<h2>Cafe Details</h2>
 <a href="/cafes">Go Back</a>
-<a href="/cafes/create">Add a New Cafe!</a>
+<a href="/cafes/add-cafe">Add a New Cafe!</a>
 <ul>
-  {{#each all}}
+  {{#each listCafes}}
     <li>
       <p>Name: {{name}}</p>
       <p>Address: {{address}}</p>
-      <p>Price Level: {{priceLevel}}</p>
-      <p>Image: {{image}}</p>
+      <p>Price level: {{priceLevel}}</p>
+      <img src="{{image}}" />
     </li>
   {{/each}}
 </ul>
+<a href="/home">HOME</a>
+<a href="auth/login"> Log In </a>
+<a href="auth/signup"> Sign Up </a>

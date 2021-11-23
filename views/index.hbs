@@ -2,8 +2,20 @@
 <p>Welcome to Home Page {{title}}</p>
 <a href="/beans">Beans</a>
 <a href="/cafes">Cafes</a>
-<ul>
-  {{#each users}}
-    <li>User: {{this.username}}</li>
-  {{/each}}
-</ul>
+
+{{#if userLoggedIn}}
+  <a href="/users/profile/{{currentUserInfo._id}}">
+    <h2>Profile</h2>
+  </a>
+  <a href="/cafes/add">
+    <h2>Add Cafe</h2>
+  </a>
+  <a href="/auth/logout">
+    <h2>Log Out</h2>
+  </a>
+{{else}}
+
+<a href="/auth/login"> Log In </a>
+<a href="/auth/signup"> Sign Up </a>
+  </a>
+{{/if}}

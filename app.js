@@ -4,9 +4,10 @@ const createError = require("http-errors");
 const express = require("express");
 
 const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/user");
+const authRouter = require("./routes/auth.routes");
 const cafesRouter = require("./routes/cafes.routes");
-
+const beansRouter = require("./routes/beans.routes");
+const userRouter = require("./routes/user");
 
 const app = express();
 
@@ -14,10 +15,11 @@ const app = express();
 require("./config/db");
 require("./config/global")(app);
 
+app.use("/users", userRouter);
+app.use("/auth", authRouter);
+app.use("/cafes", cafesRouter);
+app.use("/beans", beansRouter);
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/", cafesRouter);
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

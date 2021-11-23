@@ -1,6 +1,12 @@
-<h1>beans</h1>
-{{#each beans}}
-  <p>{{name}}</p>
-{{/each}}
-<h2>Choose Your Beans</h2>
-<a href="/">HOME</a>
+<h1>Beans</h1>
+<p>
+  {{#each beanList}}
+    <ul>
+      <a href="beans/bean-details">{{name}}</a>
+    </ul>
+  {{/each}}
+</p>
+
+<a href="/home">HOME</a>
+<a href="auth/login"> Log In </a>
+<a href="auth/signup"> Sign Up </a>

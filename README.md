@@ -24,6 +24,8 @@ Sick of the same Dolce Gusto coffee? Starbucks messed up your order again or you
 List of other features outside of the MVPs scope:
 
 - Adding map feature for nearest cafe based on preferences
+- Connecting several beans to each cafe, rather than just 1 cafe = 1 cafe
+- 3d map (Satan's cafe)
 
 ## ROUTES:
 
@@ -75,43 +77,35 @@ List of other features outside of the MVPs scope:
 
 ## Models
 
-(NEED TO CHECK IF ALL OF THESE ARE NECESSARY)
-
-
 ```
-User model
-{
-username: String,
-email: String,
-password: String,
-
-}
-
 Cafes model
 {
-cafeName: String,
-location: String,
+name: String,
+address: String,
 priceLevel: Number,
+image: String,
+beans: linking to beans ObjectId,
 }
 
 Beans model
 {
-beanName: String,
-farmer: String,
+name: String,
+origin: String,
 flavorProfile: String,
+image: String,
 }
-
-Favorites model
+Review model
 {
-cafeId: String,
-favorite: Boolean,
+user: user ObjectId,
+comment: String,
+cafeReviewed: cafe ObjectId,
+image: String,
 }
-
-Ratings model
+User model
 {
-cafeId: String,
-rating: Number,
-
+username: String,
+password: String,
+email: String,
 }
 
 ```
