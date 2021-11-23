@@ -1,20 +1,39 @@
 const express = require("express");
 const router = express.Router();
 const isLoggedIn = require("../middleware/isLoggedIn");
+const User = require("../models/User.model");
 
 router.use(isLoggedIn);
 /* GET users listing. */
 router.get("/profile", function (req, res, next) {
-    res.render("users/profile");
+  res.render("users/profile");
 });
 
 router.get("/favorites", async (req, res) => {
-    try {
-  
-      res.render("users/favorites", {  });
-    } catch (err) {
-      (err) => console.log(err);
-    }
-  });
+  try {
+    const { _id } = req.session.loggedInUser;
+    console.log("user id", _id);
+    const userPopulated = await User.findById(_id).populate("cafe");
+
+    console.log("usere", userPopulated);
+    res.render("users/favorites", { userPopulated });
+  } catch (err) {
+    (err) => console.log(err);
+  }
+});
+
+router.post("/favorites/:id", async (req, res) => {
+  try {
+    const cafeId = req.params.id;
+    const { _id } = req.session.loggedInUser;
+    const user = await User.findByIdAndUpdate(_id, {
+      $push: { favorites: cafeId },
+    });
+    console.log(user);
+    res.redirect("/users/favorites");
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 module.exports = router;

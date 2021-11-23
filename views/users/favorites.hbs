@@ -12,14 +12,22 @@
 
 <h1>{{username}}My favorites</h1>
 
-<ul>
-  {{#each favorites}}
-    <li>
-      <p>Name: {{name}}</p>
-      <p>Address: {{address}}</p>
-      <p>Price level: {{priceLevel}}</p>
-      <img src="{{image}}" />
-    </li>
-  {{/each}}
-</ul>
-<p>{{users.favorites}}</p>
+{{#if favorites}}
+
+  <ul>
+    {{#each favorites}}
+      <li>
+        <p>Name: {{name}}</p>
+        <p>Address: {{address}}</p>
+        <p>Price level: {{priceLevel}}</p>
+        <img src="{{image}}" />
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>There are no favorites</p>
+{{/if}}
+
+<a href="/users/profile/{{user._id}}">My profile</a>
+<a href="/cafes">Cafes</a>
+<a href="/home">HOME</a>

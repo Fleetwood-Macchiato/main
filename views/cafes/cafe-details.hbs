@@ -12,7 +12,6 @@
   </div>
 </nav>
 
-
 <h2>Cafe Details</h2>
 <a href="/cafes/add-cafe">Add a New Cafe!</a>
 <ul>
@@ -30,30 +29,39 @@
 <img src="{{image}}" width="300px"/>
 </div>
 
+    {{#each cafe.beans}}
+      <div>
+        <h3>{{name}}</h3>
+        <img src="{{image}}" />
+      </div>
 
-     {{/each}}
-   
+    {{/each}}
 
     <p>Leave a review:</p>
-    <label class="form-label" for="name-input">Username:</label>
-    <input
-      class="form-input"
-      type="text"
-      name="user"
-      id="user-input"
-      placeholder="Username"
-    />
-    <label class="form-label" for="review-input">Review:</label>
-    <textarea
-      class="form-input"
-      name="review"
-      id="review-input"
-      placeholder="Your review"
-    ></textarea>
+    <form action="/cafes/cafe-review/{{cafe._id}}" method="post">
+      <label class="form-label" for="name-input">Username:</label>
+      <input
+        class="form-input"
+        type="text"
+        name="user"
+        id="user-input"
+        placeholder="Username"
+      />
+      <label class="form-label" for="review-input">Review:</label>
+      <textarea
+        class="form-input"
+        name="comment"
+        id="review-input"
+        placeholder="Your review"
+      ></textarea>
 
-    <button type="submit"> add a review </button>
-    
-
+      <button type="submit"> add a review </button>
+    </form>
+    <img src="{{cafe.image}}" />
+    {{#each reviews}}
+      {{user}}
+      {{comment}}
+    {{/each}}
   </li>
 
 </ul>
