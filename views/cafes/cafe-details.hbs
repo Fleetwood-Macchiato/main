@@ -24,6 +24,18 @@
     <p>Name: {{cafe.name}}</p>
     <p>Address: {{cafe.address}}</p>
     <p>Price level: {{cafe.priceLevel}}</p>
+    <p>Beans used: </p>
+    
+     {{#each cafe.beans}}
+<div>
+<h3>{{name}}</h3>
+<img src="{{image}}"/>
+</div>
+
+
+     {{/each}}
+   
+
     <p>Leave a review:</p>
     <label class="form-label" for="name-input">Username:</label>
     <input

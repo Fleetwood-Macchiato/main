@@ -41,7 +41,7 @@ router.get("/", async (req, res) => {
 router.get("/cafe-details/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    let cafe = await Cafe.findById(id);
+    let cafe = await Cafe.findById(id).populate('beans');
     console.log("cafes from db", cafe);
 
     res.render("cafes/cafe-details", { cafe });

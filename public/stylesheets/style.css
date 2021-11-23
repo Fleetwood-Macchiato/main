@@ -23,11 +23,7 @@ h1 {
   align-items: center;
 }
 
-footer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: stretch;
-  align-content: stretch;
+#smelly-feet  {
+display: flex;
+
 }
