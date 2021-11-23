@@ -1,16 +1,11 @@
 <h2>Coffe Beans Details</h2>
 <a href="/beans">Go Back</a>
 <ul>
-  {{#each beanList}}
-    <li>
-      <p>Name: {{name}}</p>
-      <p>Origin: {{origin}}</p>
-      <p>Flavor profile: {{flavorProfile}}</p>
-      <p>Cafes: {{cafes}}</p>
-      <img src="{{image}}" />
-    </li>
-  {{/each}}
+  <li>
+    <p>Name: {{bean.name}}</p>
+    <p>Origin: {{bean.origin}}</p>
+    <p>Flavor profile: {{bean.flavorProfile}}</p>
+    <p>Cafe: {{cafe.name}}</p>
+    <img src="{{bean.image}}" />
+  </li>
 </ul>
-<a href="/home">HOME</a>
-<a href="auth//login"> Log In </a>
-<a href="auth/signup"> Sign Up </a>

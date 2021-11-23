@@ -4,5 +4,28 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+body {
+  margin: 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100vw;
+  background-color: lightgoldenrodyellow;
+}
+
+navbar {
+  background-color: lightgoldenrodyellow;
+  width: 100vw;
+  padding: 10px 30px;
+}
+
+ul {
+  list-style: none;
 }
