@@ -23,15 +23,14 @@ router.post("/add-cafe", async (req, res) => {
     res.redirect("/cafes");
   } catch (error) {
     console.log(error);
-    res.render("/add-cafe");
+    res.render("users/add-cafe");
   }
 });
 
-
 router.get("/", async (req, res) => {
   try {
-    let cafeList = await Cafe.find();
-    console.log("cafes from db", cafeList);
+    let listCafes = await Cafe.find();
+    // console.log("cafes from db", listCafes);
 
     res.render("cafes/cafes", { cafeList });
   } catch (err) {
