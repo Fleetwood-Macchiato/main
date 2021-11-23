@@ -16,11 +16,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-     
- 
-<a class="nav-item nav-link" href="/cafes"> Go back </a>
-<a class="nav-item nav-link" href="/auth/login"> Login </a>
-<a class="nav-item nav-link" href="/auth/signup"> Sign Up </a>
+
+      <a class="nav-item nav-link" href="/cafes"> Go back </a>
+      <a class="nav-item nav-link" href="/auth/login"> Login </a>
+      <a class="nav-item nav-link" href="/auth/signup"> Sign Up </a>
 
     </div>
   </div></nav>
@@ -35,37 +34,40 @@
     <p>Address: {{cafe.address}}</p>
     <p>Price level: {{cafe.priceLevel}}</p>
     <p>Beans used: </p>
-    
-     {{#each cafe.beans}}
-<div>
-<h3>{{name}}</h3>
-<img src="{{image}}"/>
-</div>
 
+    {{#each cafe.beans}}
+      <div>
+        <h3>{{name}}</h3>
+        <img src="{{image}}" />
+      </div>
 
-     {{/each}}
-   
+    {{/each}}
 
     <p>Leave a review:</p>
-    <label class="form-label" for="name-input">Username:</label>
-    <input
-      class="form-input"
-      type="text"
-      name="user"
-      id="user-input"
-      placeholder="Username"
-    />
-    <label class="form-label" for="review-input">Review:</label>
-    <textarea
-      class="form-input"
-      name="review"
-      id="review-input"
-      placeholder="Your review"
-    ></textarea>
+    <form action="/cafes/cafe-review/{{cafe._id}}" method="post">
+      <label class="form-label" for="name-input">Username:</label>
+      <input
+        class="form-input"
+        type="text"
+        name="user"
+        id="user-input"
+        placeholder="Username"
+      />
+      <label class="form-label" for="review-input">Review:</label>
+      <textarea
+        class="form-input"
+        name="comment"
+        id="review-input"
+        placeholder="Your review"
+      ></textarea>
 
-    <button type="submit"> add a review </button>
+      <button type="submit"> add a review </button>
+    </form>
     <img src="{{cafe.image}}" />
-
+    {{#each reviews}}
+      {{user}}
+      {{comment}}
+    {{/each}}
   </li>
 
 </ul>
