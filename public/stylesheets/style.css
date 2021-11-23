@@ -17,14 +17,13 @@ footer {
   left: 0;
   text-align: center;
   width: 100vw;
+  background-color: lightgoldenrodyellow;
 }
 
 navbar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  text-align: right;
+  background-color: lightgoldenrodyellow;
   width: 100vw;
+  padding: 10px 30px;
 }
 
 ul {
