@@ -21,7 +21,7 @@ sends the user back to cafe lists
 
   <div>
     <p>Select the beans:</p>
-    {{#each allBeans}}
+    {{#each beanList}}
       <input type="checkbox" name="beans" value={{_id}} />
       <label for="beans"> {{name}}</label><br />
     {{/each}}
