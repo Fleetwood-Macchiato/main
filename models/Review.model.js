@@ -5,9 +5,8 @@ const reviewSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: "User" },
   comment: String,
   cafeReviewed: { type: Schema.Types.ObjectId, ref: "Cafe" },
-  image: { type: String, required: false },
 });
 
 const Review = model("Review", reviewSchema);
 
-module.exports = User;
+module.exports = Review;
