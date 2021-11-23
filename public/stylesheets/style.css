@@ -1,9 +1,10 @@
 * {
   @import url(https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap);
+  color: white;
 }
 
 body {
-  background-image: url("/images/129701-coffee-wood-drinkware-flooring-table-4820x3087.jpg");
+  background-image: url("/images/bkgrnd.jpg");
   background-size: 100%;
 }
 
@@ -15,11 +16,18 @@ h1 {
   color: white;
 }
 
-
 .home-screen-btns {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: stretch;
+  align-content: stretch;
 }
