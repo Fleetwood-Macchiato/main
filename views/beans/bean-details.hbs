@@ -1,19 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/home"><img src="/images/coffeelogo.png" width="20px"/></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-     
- 
-<a class="nav-item nav-link" href="/beans"> Go back </a>
-<a class="nav-item nav-link" href="/auth/login"> Login </a>
-<a class="nav-item nav-link" href="/auth/signup"> Sign Up </a>
+<nav class="navbar">
+  <a class="navbar-logo" href="/home"><img
+      src="/images/coffeelogo.png"
+      width="20px"
+    /></a>
 
-    </div>
-  </div></nav>
+  <div class="navbar-links-beansdetails">
 
+    <a class="navbar-btn" href="/beans"> Go back </a>
+    <a class="navbar-btn" href="/auth/login"> Login </a>
+    <a class="navbar-btn" href="/auth/signup"> Sign Up </a>
+  </div>
+</nav>
 
 <h2>Coffee Beans Details</h2>
 
@@ -23,6 +20,6 @@
     <p>Origin: {{bean.origin}}</p>
     <p>Flavor profile: {{bean.flavorProfile}}</p>
     <p>Cafe: {{cafe.name}}</p>
-    <img src="{{bean.image}}" />
+    <img src="{{bean.image}}" width="300px"/>
   </li>
 </ul>

@@ -1,39 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/home"><img
+<nav class="navbar">
+  <a class="navbar-logo" href="/home"><img
       src="/images/coffeelogo.png"
       width="20px"
     /></a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNavAltMarkup"
-    aria-controls="navbarNavAltMarkup"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
 
-      <a class="nav-item nav-link" href="/cafes"> Go back </a>
-      <a class="nav-item nav-link" href="/auth/login"> Login </a>
-      <a class="nav-item nav-link" href="/auth/signup"> Sign Up </a>
+  <div class="navbar-links-beansdetails">
 
-    </div>
-  </div></nav>
+    <a class="navbar-btn" href="/cafes"> Go back </a>
+    <a class="navbar-btn" href="/auth/login"> Login </a>
+    <a class="navbar-btn" href="/auth/signup"> Sign Up </a>
+  </div>
+</nav>
 
 <h2>Cafe Details</h2>
-<a href="/cafes">Go Back</a>
 <a href="/cafes/add-cafe">Add a New Cafe!</a>
 <ul>
 
   <li>
     <p>Name: {{cafe.name}}</p>
+    <img src="{{cafe.image}}" width="250px" />
     <p>Address: {{cafe.address}}</p>
     <p>Price level: {{cafe.priceLevel}}</p>
     <p>Beans used: </p>
+    
+     {{#each cafe.beans}}
+<div>
+<h3>{{name}}</h3>
+<img src="{{image}}" width="300px"/>
+</div>
 
     {{#each cafe.beans}}
       <div>

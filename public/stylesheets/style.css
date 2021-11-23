@@ -32,7 +32,7 @@ a {
   padding: 0.5em 0.8em;
   background-color: rgb(182, 214, 241);
   box-shadow: 1px 1px 1px 1px rgb(177, 175, 175);
-  color: white
+  color: white;
 }
 
 .navbar-links {
@@ -42,8 +42,29 @@ a {
   justify-content: space-evenly;
 }
 
+.navbar-links-login {
+  font-size: 0.78rem;
+  width: 18%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar-links-beansdetails{
+    font-size: 0.78rem;
+    width: 54%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-links-addcafe{
+  font-size: 0.78rem;
+  width: 17%;
+  display: flex;
+  justify-content: space-evenly;
+
+}
 .barna-text {
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 3rem;
   display: flex;
   justify-content: center;
@@ -54,4 +75,29 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width:1024px) {
+  .navbar-links {
+    width: 30%;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+.navbar {
+  height: 10%;
+}
+.navbar-btn {
+ 
+  padding: 0.75rem 1.5rem;
+
+}
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  width: 100vw;
+padding: 10px 20px;
 }
