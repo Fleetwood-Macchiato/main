@@ -32,7 +32,7 @@ router.get("/", async (req, res) => {
     let listCafes = await Cafe.find();
     // console.log("cafes from db", listCafes);
 
-    res.render("cafes/cafes", { cafeList });
+    res.render("cafes/cafes", { listCafes });
   } catch (err) {
     (err) => console.log(err);
   }
