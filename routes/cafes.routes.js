@@ -3,8 +3,9 @@ const router = express.Router();
 
 // ********* require Book model in order to use it *********
 const Cafe = require("../models/Cafes.model");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
-router.get("/add-cafe", (req, res) => {
+router.get("/add-cafe", isLoggedIn, (req, res) => {
   res.render("users/add-cafe");
 });
 
