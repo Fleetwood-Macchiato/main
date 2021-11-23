@@ -24,12 +24,12 @@ router
       User.create({ username, password: hashPwd, email })
         .then((newUser) => {
           const { _id, username, email } = newUser;
-          req.session.currentUser = {
+          req.session.loggedInUser = {
             username,
             email,
             _id,
           };
-          console.log("new user req session ", req.session.currentUser);
+          console.log("new user req session ", req.session.loggedInUser);
           res.redirect("/home");
         })
         .catch((error) =>
@@ -46,7 +46,7 @@ router
   .post((req, res) => {
     console.log(
       "new user req session in post login route ",
-      req.session.currentUser
+      req.session.loggedInUser
     );
     const { username, password } = req.body;
     if (!username || !password)
@@ -57,7 +57,12 @@ router
         if (!user)
           res.render("auth/login", { errorMessage: "User does not exist" });
         const isPwdCorrect = bcrypt.compareSync(password, user.password); // first password is one from the form. the second is the encrypted one from the database
-        if (isPwdCorrect) res.redirect("/users/profile");
+        if (isPwdCorrect) {
+          //res.redirect("/users/profile");
+          req.session.loggedInUser = user;
+          res.render("users/profile", user);
+        }
+
         // else res.render("auth/login", { errorMessage: "User does not exist" });
       })
       .catch((err) => console.log(err));
