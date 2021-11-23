@@ -21,7 +21,9 @@
     <ul>
      <a href = "/cafes/cafe-details/{{id}}">{{name}}</a> 
      <img src="{{image}}" width="400px"/><br><br>
-      <button><img src="/images/heartlogo.jpeg" width="30px"/></button>
+     <form action="/users/favorites/{{id}}" method="POST">
+        <button><img src="/images/heartlogo.jpeg" width="30px"/></button>
+      </form>
     </ul>
   {{/each}}
 </p>
