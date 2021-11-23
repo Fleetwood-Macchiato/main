@@ -23,13 +23,13 @@ router
 
       User.create({ username, password: hashPwd, email })
         .then((newUser) => {
-          const { _id, username, email} = newUser;
+          const { _id, username, email } = newUser;
           req.session.currentUser = {
             username,
             email,
-            _id
+            _id,
           };
-          console.log('new user req session ', req.session.currentUser)
+          console.log("new user req session ", req.session.currentUser);
           res.redirect("/home");
         })
         .catch((error) =>
@@ -44,7 +44,10 @@ router
     res.render("auth/login");
   })
   .post((req, res) => {
-    console.log('new user req session in post login route ', req.session.currentUser)
+    console.log(
+      "new user req session in post login route ",
+      req.session.currentUser
+    );
     const { username, password } = req.body;
     if (!username || !password)
       res.render("auth/login", { errorMessage: "All fields are required" });
@@ -59,5 +62,12 @@ router
       })
       .catch((err) => console.log(err));
   });
+
+router.get("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) res.redirect("/");
+    else res.redirect("/auth/login");
+  });
+});
 
 module.exports = router;
