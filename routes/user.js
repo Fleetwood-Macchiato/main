@@ -8,5 +8,13 @@ router.get("/profile", function (req, res, next) {
     res.render("users/profile");
 });
 
+router.get("/favorites", async (req, res) => {
+    try {
+  
+      res.render("users/favorites", {  });
+    } catch (err) {
+      (err) => console.log(err);
+    }
+  });
 
 module.exports = router;
