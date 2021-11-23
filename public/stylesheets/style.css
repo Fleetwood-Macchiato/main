@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 body {
   background-image: url("/images/bkgrnd.jpg");
   background-repeat: no-repeat;
@@ -12,8 +11,6 @@ body {
   background-position: center;
 }
 
-=======
->>>>>>> main
 a {
   color: #00b7ff;
   text-decoration: none;
@@ -57,12 +54,4 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
 }
-=======
-}
-
-#smelly-feet {
-  display: flex;
-}
->>>>>>> main
