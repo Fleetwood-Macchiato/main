@@ -30,21 +30,22 @@ router.post("/add-cafe", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    let listCafes = await Cafe.find();
-    console.log("cafes from db", listCafes);
+    let cafeList = await Cafe.find();
+    console.log("cafes from db", cafeList);
 
-    res.render("cafes/cafes", { listCafes });
+    res.render("cafes/cafes", { cafeList });
   } catch (err) {
     (err) => console.log(err);
   }
 });
 
-router.get("/cafe-details", async (req, res) => {
+router.get("/cafe-details/:id", async (req, res) => {
   try {
-    let listCafes = await Cafe.find();
-    console.log("cafes from db", listCafes);
+    const { id } = req.params;
+    let cafe = await Cafe.findById(id);
+    console.log("cafes from db", cafe);
 
-    res.render("cafes/cafe-details", { listCafes });
+    res.render("cafes/cafe-details", { cafe });
   } catch (err) {
     (err) => console.log(err);
   }

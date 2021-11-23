@@ -15,12 +15,13 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/bean-details", async (req, res) => {
+router.get("/bean-details/:id", async (req, res) => {
   try {
-    let beanList = await Bean.find();
-    console.log("beans from db", beanList);
+    const {id} = req.params
+    let bean = await Bean.findById(id);
+    console.log("beans from db", bean);
 
-    res.render("beans/bean-details", { beanList });
+    res.render("beans/bean-details", {bean} );
   } catch (err) {
     (err) => console.log(err);
   }
