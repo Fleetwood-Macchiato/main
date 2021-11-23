@@ -3,6 +3,7 @@ const router = express.Router();
 
 // ********* require Book model in order to use it *********
 const Cafe = require("../models/Cafes.model");
+const Review = require("../models/Review.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/add-cafe", isLoggedIn, (req, res) => {
@@ -28,11 +29,11 @@ router.post("/add-cafe", async (req, res) => {
   }
 });
 
-router.get("/delete/:id",(req, res)=>{
+router.get("/delete/:id", (req, res) => {
   Cafe.findByIdAndDelete(req.params.id)
-  .then(deletedCafe => res.redirect("/cafes"))
-  .catch(error=> console.log(error))
-})
+    .then((deletedCafe) => res.redirect("/cafes"))
+    .catch((error) => console.log(error));
+});
 
 router.get("/", async (req, res) => {
   try {
@@ -48,13 +49,25 @@ router.get("/", async (req, res) => {
 router.get("/cafe-details/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    let cafe = await Cafe.findById(id).populate('beans');
+    let cafe = await Cafe.findById(id).populate("beans");
     console.log("cafes from db", cafe);
-
-    res.render("cafes/cafe-details", { cafe });
+    let reviews = await Review.find({ cafeReviewed: id });
+    console.log("reviews", reviews);
+    res.render("cafes/cafe-details", { cafe, reviews });
   } catch (err) {
     (err) => console.log(err);
   }
+});
+
+router.post("/cafe-review/:id", (req, res) => {
+  const { id } = req.params;
+  const { user, comment } = req.body;
+  Review.create({ user, comment, cafeReviewed: id })
+    .then((newReview) => {
+      console.log("new review", newReview);
+      res.redirect(`/cafes/cafe-details/${id}`);
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = router;
