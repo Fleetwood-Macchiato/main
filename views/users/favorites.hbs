@@ -1,4 +1,16 @@
-<h1>{{username}}'s favorites</h1>
+<nav class="navbar">
+  <a class="navbar-logo" href="/home"><img
+      src="/images/coffeelogo.png"
+      width="20px"
+    /></a>
+
+  <div class="navbar-links-addcafe">
+
+    <a class="navbar-btn" href="/users/profile"> Profile</a>
+  </div>
+</nav>
+
+<h1>{{username}}My favorites</h1>
 
 <ul>
   {{#each favorites}}
@@ -11,7 +23,3 @@
   {{/each}}
 </ul>
 <p>{{users.favorites}}</p>
-
-<a href="/users/profile/{{user._id}}">My profile</a>
-<a href="/cafes">Cafes</a>
-<a href="/home">HOME</a>
