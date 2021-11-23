@@ -6,16 +6,24 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      {{#if userLoggedIn}}
+            <a href="/users/profile/{{user._id}}">My profile</a>
+
+      {{#if loggedInUser}}
  <a class="nav-item nav-link active" href="/users/profile/{{currentUserInfo._id}}"></a>Profile <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="/cafes/add"></a>Add Cafe</a>
       <a class="nav-item nav-link" href="/auth/logout"></a>>Logout</a>
+
+      
+
 {{else}}
 <a class="nav-item nav-link" href="/auth/login"> Log In </a>
 <a class="nav-item nav-link" href="/auth/signup"> Sign Up </a>
+
+
     </div>
   </div></nav>
   {{/if}}
+
 
 
 

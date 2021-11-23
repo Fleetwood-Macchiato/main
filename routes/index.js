@@ -3,11 +3,12 @@ const router = express.Router();
 
 const User = require("../models/User.model");
 const Api = require("../apis/api");
+const isLoggedIn = require("../middleware/isLoggedIn");
 
 /* GET home page. */
 router.get("/home", (req, res) => {
   User.find().then((users) =>
-    res.render("index", { title: "BarnaBrew", users })
+    res.render("index", { title: "BarnaBrew", users, isLoggedIn })
   );
 });
 

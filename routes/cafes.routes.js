@@ -29,6 +29,12 @@ router.post("/add-cafe", async (req, res) => {
   }
 });
 
+router.get("/delete/:id",(req, res)=>{
+  Cafe.findByIdAndDelete(req.params.id)
+  .then(deletedCafe => res.redirect("/cafes"))
+  .catch(error=> console.log(error))
+})
+
 router.get("/", async (req, res) => {
   try {
     let listCafes = await Cafe.find();
