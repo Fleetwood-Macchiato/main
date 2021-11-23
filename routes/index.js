@@ -7,15 +7,15 @@ const Api = require("../apis/api");
 /* GET home page. */
 router.get("/home", (req, res) => {
   User.find().then((users) =>
-    res.render("index", { title: "Coffee Heaven", users })
+    res.render("index", { title: "BarnaBrew", users })
   );
 });
 
 /* GET from API */
-router.get("/api", (req, res) => {
+/* router.get("/api", (req, res) => {
   Api.getAll().then((entity) =>
     res.render("index", { title: "Coffee Heaven", users: entity })
   );
-});
+}); */
 
 module.exports = router;

@@ -1,31 +1,41 @@
+* {
+  @import url(https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap);
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("/images/129701-coffee-wood-drinkware-flooring-table-4820x3087.jpg");
+  background-size: 100%;
 }
 
 a {
   color: #00b7ff;
 }
 
-body {
-  margin: 0;
+h1 {
+  color: white;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  width: 100vw;
-  background-color: lightgoldenrodyellow;
+.home-beans-btn {
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 5px;
+  border: 3px white;
+  border-radius: 30px;
 }
 
-navbar {
-  background-color: lightgoldenrodyellow;
-  width: 100vw;
-  padding: 10px 30px;
+.home-cafes-btn {
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 5px;
+  border: 3px white;
+  border-radius: 15px;
 }
 
-ul {
-  list-style: none;
+.home-screen-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

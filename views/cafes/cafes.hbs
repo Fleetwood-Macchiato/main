@@ -1,9 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/home"><img src="/images/coffeelogo.png" width="20px"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+     
+ 
+<a class="nav-item nav-link" href="/beans"> Beans </a>
+<a class="nav-item nav-link" href="auth/login"> Login </a>
+<a class="nav-item nav-link" href="auth/signup"> Sign Up </a>
+
+    </div>
+  </div></nav>
+
+
 <h1>Cafes</h1>
 <p>
   {{#each cafeList}}
     <ul>
-     <a href = "/cafes/cafe-details/{{id}}">{{name}}</a> 
-     <img src="{{image}}"/>
+     <a href = "/cafes/cafe-details">{{name}}</a> 
+     <img src="{{image}}" width="400px"/><br><br>
+      <button><img src="/images/heartlogo.jpeg" width="30px"/></button>
     </ul>
   {{/each}}
 </p>
