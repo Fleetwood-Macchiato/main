@@ -6,18 +6,23 @@
 
   <div class="navbar-links-beansdetails">
 
-    <a class="navbar-btn" href="/home"> Go back </a>
-    <a class="navbar-btn" href="/auth/login"> Login </a>
-    <a class="navbar-btn" href="/auth/signup"> Sign Up </a>
+    <a class="navbar-btn" href="/home" align="center"> Back </a>
+    <a class="navbar-btn" href="/auth/login" align="center"> Login </a>
+    <a class="navbar-btn" href="/auth/signup" align="center"> Sign Up </a>
   </div>
 </nav>
 
-<h1>Beans</h1>
+
 <p>
   {{#each beanList}}
+    <div class="container">
+<div class="card card0">
+   <div class="border">
     <ul>
-      <a href="beans/bean-details/{{id}}">{{name}}</a>
+     <h2> <a class="bean-card-title" href="beans/bean-details/{{id}}">{{name}}</a></h2>
+      <img class="bean-img" src="{{image}}"/></a>
+  
     </ul>
+    </div></div></div>
   {{/each}}
 </p>
-

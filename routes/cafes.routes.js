@@ -44,9 +44,9 @@ router.get("/cafe-details/:id", async (req, res) => {
   try {
     const { id } = req.params;
     let cafe = await Cafe.findById(id).populate("beans");
-    console.log("cafes from db", cafe);
+    console.log("cafes from db",  cafe.image);
+
     let reviews = await Review.find({ cafeReviewed: id });
-    console.log("reviews", reviews);
     res.render("cafes/cafe-details", { cafe, reviews });
   } catch (err) {
     (err) => console.log(err);
