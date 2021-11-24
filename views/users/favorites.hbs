@@ -11,30 +11,27 @@
 </nav>
 
 <h1>{{userPopulated.username}}My favorites</h1>
-    {{#each userPopulated.favorites}}
-
-    {{name}}
-    {{address}}
-    <img src="{{image}}"/>
-    {{/each}}
-
 
 {{#if userPopulated.favorites}}
-{{#each favorites }}
+  {{#each userPopulated.favorites}}
 
-  <ul>
+    <ul>
       <li>
-        <p>Name: {{name}}</p>
-        <p>Address: {{address}}</p>
-        <p>Price level: {{priceLevel}}</p>
-        <img src="{{image}}" />
+        <p>Name: {{this.name}}</p>
+        <p>Address: {{this.address}}</p>
+        <p>Price level: {{this.priceLevel}}</p>
+        <img src="{{this.image}}" />
       </li>
-    {{/each}}
-  </ul>
+    </ul>
+
+    <form action="/users/{{_id}}/delete" method="POST">
+      <button type="submit">Delete cafe</button>
+    </form>
+  {{/each}}
+
 {{else}}
   <p>There are no favorites</p>
 {{/if}}
-
 
 <a href="/users/profile/{{user._id}}">My profile</a>
 <a href="/cafes">Cafes</a>

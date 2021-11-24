@@ -38,5 +38,16 @@ router.post("/favorites/:id", async (req, res) => {
   }
 });
 
+router.post("/:id/delete", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+     const { _id } = req.session.loggedInUser
+    const deletedCafe = await User.findByIdAndUpdate(_id, {$pull: {favorites: id}});
+    console.log("deleted Cafe", deletedCafe)
+    res.redirect("/cafes")
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 module.exports = router;

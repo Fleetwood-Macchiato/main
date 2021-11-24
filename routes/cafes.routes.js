@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-const multerUploader = require("../config/cloudinary")
+const multerUploader = require("../config/cloudinary");
 
 // ********* require Book model in order to use it *********
 const Cafe = require("../models/Cafes.model");
 const Review = require("../models/Review.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
-
 
 router.get("/add-cafe", isLoggedIn, (req, res) => {
   res.render("users/add-cafe");
@@ -16,14 +15,19 @@ router.get("/add-cafe", isLoggedIn, (req, res) => {
 router.post("/add-cafe", multerUploader.single("imgUrl"), async (req, res) => {
   try {
     const { name, address, priceLevel, image, beans } = req.body;
-
-    const imgUrl = req.file.path;
+    let imgUrl;
+    if (req.file) {
+      imgUrl = req.file.path;
+    } else {
+      imgUrl =
+        "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1478&q=80";
+    }
 
     const createdCafe = await Cafe.create({
       name,
       address,
       priceLevel,
-      image,
+      imgUrl,
       beans,
     });
 
@@ -35,11 +39,11 @@ router.post("/add-cafe", multerUploader.single("imgUrl"), async (req, res) => {
   }
 });
 
-router.get("/delete/:id", (req, res) => {
-  Cafe.findByIdAndDelete(req.params.id)
-    .then((deletedCafe) => res.redirect("/cafes"))
-    .catch((error) => console.log(error));
-});
+// router.get("/delete/:id", (req, res) => {
+//   Cafe.findByIdAndDelete(req.params.id)
+//     .then((deletedCafe) => res.redirect("/cafes"))
+//     .catch((error) => console.log(error));
+// });
 
 router.get("/", async (req, res) => {
   try {
