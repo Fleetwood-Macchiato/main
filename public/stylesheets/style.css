@@ -1,6 +1,6 @@
 * {
-  @import url(https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap);
-  color: grey;
+  @import url(https://fonts.googleapis.com/css2?family=Neucha&display=swap);
+  color: black;
   box-sizing: border-box;
 }
 
@@ -26,78 +26,256 @@ a {
   padding: 0 10px;
 }
 
-.navbar-btn {
+/*.navbar-btn {
   border: solid 3px rgb(182, 214, 241);
   border-radius: 15px;
   padding: 0.5em 0.8em;
   background-color: rgb(182, 214, 241);
   box-shadow: 1px 1px 1px 1px rgb(177, 175, 175);
   color: white;
+}*/
+
+.navbar-btn {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.navbar-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.navbar-btn:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
 
 .navbar-links {
-  font-size: 0.78rem;
-  width: 37%;
+  width: 42%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .navbar-links-login {
+  font-size: 0.6rem;
+  width: 17%;
+}
+
+.navbar-links-beansdetails {
   font-size: 0.78rem;
-  width: 18%;
+  width: 54%;
   display: flex;
   justify-content: space-evenly;
 }
 
-.navbar-links-beansdetails{
-    font-size: 0.78rem;
-    width: 54%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.navbar-links-addcafe{
+.navbar-links-addcafe {
   font-size: 0.78rem;
   width: 17%;
   display: flex;
   justify-content: space-evenly;
-
 }
 .barna-text {
-  color: rgb(255, 255, 255);
-  font-size: 3rem;
+  color: black;
+  font-size: 4rem;
+  font-weight: 900;
   display: flex;
   justify-content: center;
+  -webkit-animation: text-focus-in 0.75s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+  animation: text-focus-in 0.75s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
-.home-screen-btns {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
 }
 
-@media (min-width:1024px) {
+@media (min-width: 1024px) {
   .navbar-links {
     width: 30%;
     font-size: 1rem;
     text-transform: uppercase;
   }
-.navbar {
-  height: 10%;
-}
-.navbar-btn {
- 
-  padding: 0.75rem 1.5rem;
-
-}
+  .navbar {
+    height: 10%;
+  }
+  .navbar-btn {
+    padding: 0.75rem 1.5rem;
+  }
 }
 
 footer {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   left: 0;
   background-color: white;
   width: 100vw;
-padding: 10px 20px;
+  padding: 10px 20px;
+}
+
+.login-form {
+  background-color: #ffffff;
+  width: 400px;
+  height: 400px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.login-text {
+  padding-top: 40px;
+  color: black;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+form.form1 {
+  padding-top: 70px;
+}
+
+.un {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  margin-left: 46px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.pass {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  margin-left: 46px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.un:focus,
+.pass:focus {
+  border: 2px solid rgba(0, 0, 0, 0.18) !important;
+}
+
+.submit {
+  /*cursor: pointer;
+  border-radius: 5em;
+  color: black;
+  background: linear-gradient(to right, #b9b9b9, white);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 35%;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);*/
+
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: 0.75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  
+}
+
+.submit:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.submit:focus {
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
