@@ -60,7 +60,7 @@ a {
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
   user-select: none;
-  width:73px;
+  width: 73px;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
@@ -87,7 +87,7 @@ a {
 
 .navbar-links-beansdetails {
   font-size: 0.78rem;
-  width: 54%;
+  width: 66%;
   display: flex;
   justify-content: space-evenly;
 }
@@ -99,7 +99,7 @@ a {
   justify-content: space-evenly;
 }
 .barna-text {
-  color: black;
+  color: rgb(225, 245, 245);
   font-size: 4rem;
   font-weight: 900;
   display: flex;
@@ -148,6 +148,22 @@ a {
   }
 }
 
+.home-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.home-screen-btns {
+  padding: 5px;
+}
+
+.quote {
+  color: rgb(230, 232, 233);
+}
+
 footer {
   font-size: 0.8rem;
   display: flex;
@@ -177,7 +193,17 @@ footer {
 }
 
 form.form1 {
-  padding-top: 70px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form.form2 {
+  padding-top: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .un {
@@ -194,7 +220,6 @@ form.form1 {
   box-sizing: border-box;
   border: 2px solid rgba(0, 0, 0, 0.02);
   margin-bottom: 50px;
-  margin-left: 46px;
   text-align: center;
   margin-bottom: 27px;
   font-family: "Ubuntu", sans-serif;
@@ -214,7 +239,6 @@ form.form1 {
   box-sizing: border-box;
   border: 2px solid rgba(0, 0, 0, 0.02);
   margin-bottom: 50px;
-  margin-left: 46px;
   text-align: center;
   margin-bottom: 27px;
   font-family: "Ubuntu", sans-serif;
@@ -224,34 +248,12 @@ form.form1 {
 .pass:focus {
   border: 2px solid rgba(0, 0, 0, 0.18) !important;
 }
-
 .submit {
-  /*cursor: pointer;
-  border-radius: 5em;
-  color: black;
-  background: linear-gradient(to right, #b9b9b9, white);
-  border: 0;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  font-family: "Ubuntu", sans-serif;
-  margin-left: 35%;
-  font-size: 13px;
-  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);*/
-
-  align-self: center;
-  background-color: #fff;
-  background-image: none;
-  background-position: 0 90%;
   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
   border-style: solid;
   border-width: 2px;
   box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
-  box-sizing: border-box;
-  color: #41403e;
   cursor: pointer;
-  display: inline-block;
   font-family: Neucha, sans-serif;
   font-size: 1rem;
   line-height: 23px;
@@ -277,10 +279,6 @@ form.form1 {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 4px -6px;
 }
 
-/*.cafe-img {
-  width: 70%;
-}*/
-
 .container {
   height: 62vh;
   display: flex;
@@ -288,7 +286,7 @@ form.form1 {
   align-items: center;
   margin: 0 auto;
 }
-.border{
+.border {
   height: 369px;
   width: 290px;
   background: transparent;
@@ -296,9 +294,8 @@ form.form1 {
   transition: border 1s;
   position: relative;
 }
-  
 
-.card{
+.card {
   height: 379px;
   width: 300px;
   background: grey;
@@ -320,6 +317,22 @@ form.form1 {
 }
 
 .cafe-img {
-  width: 20rem;
+  width: 15rem;
 }
 
+.bean-img {
+  width: 12rem;
+}
+
+.ul {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.bean-card-title {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  color: rgb(104, 184, 216);
+}

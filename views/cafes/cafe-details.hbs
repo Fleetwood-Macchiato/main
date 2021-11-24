@@ -6,9 +6,9 @@
 
   <div class="navbar-links-beansdetails">
 
-    <a class="navbar-btn" href="/cafes"> Go back </a>
-    <a class="navbar-btn" href="/auth/login"> Login </a>
-    <a class="navbar-btn" href="/auth/signup"> Sign Up </a>
+    <a class="navbar-btn" href="/cafes" align="center"> Back </a>
+    <a class="navbar-btn" href="/auth/login" align="center"> Login </a>
+    <a class="navbar-btn" href="/auth/signup" align="center"> Sign Up </a>
   </div>
 </nav>
 
@@ -18,11 +18,16 @@
 <div class="cafe-card">
 <ul>
   <li>
+    
     <p>Name: {{cafe.name}}</p>
-    <img class="cafe-img" src="{{cafe.image}}" />
+    <img class="cafe-img" src="{{cafe.imgUrl}}" />
     <p>Address: {{cafe.address}}</p>
     <p>Price level: {{cafe.priceLevel}}</p>
     <p>Beans used: </p>
+     <form action="/users/favorites/{{id}}" method="POST">
+      <button class="heart-btn"><img src="/images/heartlogo.jpeg" width="30px"/></button>
+   
+      </form>
 
     {{#each cafe.beans}}
       <div>
