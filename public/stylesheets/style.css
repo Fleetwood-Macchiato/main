@@ -284,15 +284,18 @@ form.form2 {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  
   margin: 0 auto;
 }
 .border {
-  height: 369px;
-  width: 290px;
-  background: transparent;
   border-radius: 10px;
   transition: border 1s;
   position: relative;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .card {
