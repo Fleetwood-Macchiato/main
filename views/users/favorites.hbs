@@ -12,11 +12,12 @@
 
 <h1>{{userPopulated.username}}My favorites</h1>
     {{#each userPopulated.favorites}}
-
-    {{name}}
-    {{address}}
-    <img src="{{image}}"/>
+<div>
+   <h3> {{name}} </h3>
+    <p>{{address}} </p>
+    <img src="{{imgUrl}}"/>
     {{/each}}
+  </div>
 
 
 {{#if userPopulated.favorites}}
