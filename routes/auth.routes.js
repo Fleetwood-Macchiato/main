@@ -10,7 +10,7 @@ router
     res.render("auth/signup");
   })
   .post((req, res) => {
-    const { username, password, email } = req.body;
+    const { username, password, email, favorites } = req.body;
     if (!username || !password)
       res.render("auth/signup", { errorMessage: "All fields are required" });
 
@@ -21,13 +21,14 @@ router
       const salt = bcrypt.genSaltSync(saltRound);
       const hashPwd = bcrypt.hashSync(password, salt);
 
-      User.create({ username, password: hashPwd, email })
+      User.create({ username, password: hashPwd, email, favorites })
         .then((newUser) => {
-          const { _id, username, email } = newUser;
+          const { _id, username, email, favorites } = newUser;
           req.session.loggedInUser = {
             username,
             email,
             _id,
+            favorites
           };
           console.log("new user req session ", req.session.loggedInUser);
           res.redirect("/home");

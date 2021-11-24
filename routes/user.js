@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const isLoggedIn = require("../middleware/isLoggedIn");
 const User = require("../models/User.model");
+const Cafe = require("../models/Cafes.model");
 
 router.use(isLoggedIn);
 /* GET users listing. */
@@ -13,9 +14,10 @@ router.get("/favorites", async (req, res) => {
   try {
     const { _id } = req.session.loggedInUser;
     console.log("user id", _id);
-    const userPopulated = await User.findById(_id).populate("cafe");
+    const userPopulated = await User.findById(_id).populate("favorites");
 
-    console.log("usere", userPopulated);
+    console.log("user", userPopulated);
+
     res.render("users/favorites", { userPopulated });
   } catch (err) {
     (err) => console.log(err);

@@ -10,12 +10,18 @@
   </div>
 </nav>
 
-<h1>{{username}}My favorites</h1>
+<h1>{{userPopulated.username}}My favorites</h1>
+    {{#each userPopulated.favorites}}
 
-{{#if favorites}}
+    {{name}}
+    {{address}}
+    {{/each}}
+
+
+{{#if userPopulated.favorites}}
+{{#each favorites }}
 
   <ul>
-    {{#each favorites}}
       <li>
         <p>Name: {{name}}</p>
         <p>Address: {{address}}</p>
