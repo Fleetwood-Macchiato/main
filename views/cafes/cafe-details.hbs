@@ -18,6 +18,7 @@
 <div class="cafe-card">
 <ul>
   <li>
+    
     <p>Name: {{cafe.name}}</p>
     <img class="cafe-img" src="{{cafe.image}}" />
     <p>Address: {{cafe.address}}</p>
@@ -31,7 +32,7 @@
       </div>
     {{/each}}
 
-{{/each}}</div>
+</div>
 
     <p>Leave a review:</p>
     <form action="/cafes/cafe-review/{{cafe._id}}" method="POST">
