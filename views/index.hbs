@@ -1,6 +1,7 @@
 
 <nav class="navbar">
   <a class="navbar-logo" href="/home"><img src="/images/coffeelogo.png" width="20px"/></a>
+  
   <div class="navbar-links">
     {{#if userLoggedIn}}
       <a class="navbar-btn" href="/users/profile/{{currentUserInfo._id}}"></a>Profile <span class="sr-only">(current)</span></a>
@@ -13,11 +14,14 @@
   </div>
 </nav>
 
-<h1 class="barna-text">Barna Brew</h1>
+
 
 <div class ="home-screen-btns"> 
   <a class="home-beans-btn" href="/beans">Beans</a> 
   <a class="home-cafes-btn" href="/cafes">Cafes</a>
   </div>
-  
+
+  <h1 class="barna-text">Barna Brew</h1>
+
+
     {{>footer}}
