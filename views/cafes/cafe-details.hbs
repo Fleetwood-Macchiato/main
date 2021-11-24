@@ -14,8 +14,8 @@
 
 <h2>Cafe Details</h2>
 <a href="/cafes/add-cafe">Add a New Cafe!</a>
-<ul>
 
+<ul>
   <li>
     <p>Name: {{cafe.name}}</p>
     <img src="{{cafe.image}}" width="250px" />
@@ -28,14 +28,6 @@
 <h3>{{name}}</h3>
 <img src="{{image}}" width="300px"/>
 </div>
-
-    {{#each cafe.beans}}
-      <div>
-        <h3>{{name}}</h3>
-        <img src="{{image}}" />
-      </div>
-
-    {{/each}}
 
     <p>Leave a review:</p>
     <form action="/cafes/cafe-review/{{cafe._id}}" method="POST">

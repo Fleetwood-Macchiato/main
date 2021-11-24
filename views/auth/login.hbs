@@ -9,26 +9,30 @@
   </div>
 </nav>
 
-<h2>Login:</h2>
-<form action="/auth/login" method="post">
-  <label for="username">Username:</label>
-  <input
-    required
-    type="text"
-    name="username"
-    placeholder="type your username"
-  />
+<div class="login-form">
+  <h2 class="login-text" align="center"></h2>
+  <form class="form1" action="/auth/login" method="post">
+    <label for="username"></label>
+    <input
+      class="un"
+      required
+      type="text"
+      name="username"
+      placeholder="type your username"
+      align="center"
+    />
 
-  <label for="password">Password:</label>
-  <input
-    required
-    type="password"
-    name="password"
-    placeholder="hope you remember it..."
-  />
+    <label for="password"></label>
+    <input
+      class="pass"
+      required
+      type="password"
+      name="password"
+      placeholder="password..."
+    />
 
-  <button type="submit">Login</button>
-</form>
+    <button type="submit" class="submit">Login</button>
+  </form></div>
 {{#if errorMessage}}
   <p>
 
