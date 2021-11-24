@@ -1,18 +1,24 @@
 const express = require("express");
 const router = express.Router();
 
+const multerUploader = require("../config/cloudinary")
+
 // ********* require Book model in order to use it *********
 const Cafe = require("../models/Cafes.model");
 const Review = require("../models/Review.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+
 router.get("/add-cafe", isLoggedIn, (req, res) => {
   res.render("users/add-cafe");
 });
 
-router.post("/add-cafe", async (req, res) => {
+router.post("/add-cafe", multerUploader.single("imgUrl"), async (req, res) => {
   try {
     const { name, address, priceLevel, image, beans } = req.body;
+
+    const imgUrl = req.file.path;
+
     const createdCafe = await Cafe.create({
       name,
       address,

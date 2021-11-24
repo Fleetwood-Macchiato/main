@@ -14,19 +14,19 @@
 
 <h2>Add New Cafe!</h2>
 
-<form action="/cafes/add-cafe" method="POST">
+<form action="/cafes/add-cafe" method="POST" enctype="multipart/form-data">
 
   <label for="name">Cafe name:</label>
-  <input type="text" name="name" />
+  <input type="text" name="name" required />
 
   <label for="review">A few words:</label>
-  <input type="text" name="review" />
+  <textarea type="text" name="review"required> </textarea>
 
   <label for="address">Location:</label>
   <input type="text" name="address" />
 
   <label for="picture">Picture:</label>
-  <input type="image" name="picture" />
+  <input type="file" name="imgUrl"/>
 
   <label for="priceLevel">Price Level:</label>
   <input type="text" name="priceLevel" />
