@@ -24,6 +24,10 @@
     <p>Address: {{cafe.address}}</p>
     <p>Price level: {{cafe.priceLevel}}</p>
     <p>Beans used: </p>
+     <form action="/users/favorites/{{id}}" method="POST">
+      <button class="heart-btn"><img src="/images/heartlogo.jpeg" width="30px"/></button>
+   
+      </form>
 
     {{#each cafe.beans}}
       <div>
