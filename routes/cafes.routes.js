@@ -9,11 +9,18 @@ const Review = require("../models/Review.model");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/add-cafe", isLoggedIn, (req, res) => {
-  res.render("users/add-cafe");
+  let userLoggedIn;
+  if (req.session.loggedInUser) userLoggedIn = true;
+  else userLoggedIn = false;
+  res.render("users/add-cafe", { userLoggedIn });
 });
 
 router.post("/add-cafe", multerUploader.single("imgUrl"), async (req, res) => {
   try {
+    let userLoggedIn;
+    if (req.session.loggedInUser) userLoggedIn = true;
+    else userLoggedIn = false;
+
     const { name, address, priceLevel, image, beans } = req.body;
     let imgUrl;
     if (req.file) {
@@ -31,20 +38,20 @@ router.post("/add-cafe", multerUploader.single("imgUrl"), async (req, res) => {
       beans,
     });
 
-    console.log(createdCafe);
     res.redirect("/cafes");
   } catch (error) {
-    console.log(error);
-    res.render("users/add-cafe");
+    res.render("users/add-cafe", { userLoggedIn });
   }
 });
 
 router.get("/", async (req, res) => {
   try {
-    let listCafes = await Cafe.find();
-    // console.log("cafes from db", listCafes);
+    let userLoggedIn;
+    if (req.session.loggedInUser) userLoggedIn = true;
+    else userLoggedIn = false;
 
-    res.render("cafes/cafes", { listCafes });
+    let listCafes = await Cafe.find();
+    res.render("cafes/cafes", { listCafes, userLoggedIn });
   } catch (err) {
     (err) => console.log(err);
   }
@@ -52,12 +59,15 @@ router.get("/", async (req, res) => {
 
 router.get("/cafe-details/:id", async (req, res) => {
   try {
+    let userLoggedIn;
+    if (req.session.loggedInUser) userLoggedIn = true;
+    else userLoggedIn = false;
+
     const { id } = req.params;
     let cafe = await Cafe.findById(id).populate("beans");
-    console.log("cafes from db",  cafe.image);
 
     let reviews = await Review.find({ cafeReviewed: id });
-    res.render("cafes/cafe-details", { cafe, reviews });
+    res.render("cafes/cafe-details", { cafe, reviews, userLoggedIn });
   } catch (err) {
     (err) => console.log(err);
   }
@@ -68,18 +78,18 @@ router.post("/cafe-review/:id", (req, res) => {
   const { user, comment } = req.body;
   Review.create({ user, comment, cafeReviewed: id })
     .then((newReview) => {
-      console.log("new review", newReview);
       res.redirect(`/cafes/cafe-details/${id}`);
     })
     .catch((err) => console.log(err));
 });
 router.get("/", async (req, res) => {
   try {
-    let listCafes = await Cafe.find();
-    // console.log("cafes from db", listCafes);
+    let userLoggedIn;
+    if (req.session.loggedInUser) userLoggedIn = true;
+    else userLoggedIn = false;
 
-    res.render("cafes/cafes", { listCafes });
-    console.log(listCafes);
+    let listCafes = await Cafe.find();
+    res.render("cafes/cafes", { listCafes, userLoggedIn });
   } catch (err) {
     (err) => console.log(err);
   }
