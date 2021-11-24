@@ -17,7 +17,7 @@
 </form>
 <article>
   <img src="{{user.image}}" alt="user image" />
-  <p><b>Name:</b> {{user.name}}</p>
-  <a href="/users/profile/{{user._id}}/edit">Edit</a>
-  <a href="/users/favorites{{user.id}}">Favorites {{favorites}}</a>
+  <p><b>Name:</b> {{userPopulated.name}}</p>
+  <a href="/users/profile/{{userPopulated._id}}/edit">Edit</a>
+  <a href="/users/favorites{{userPopulated.id}}">Favorites {{favorites}}</a>
 </article>

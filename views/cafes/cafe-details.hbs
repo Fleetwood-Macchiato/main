@@ -23,12 +23,14 @@
     <p>Address: {{cafe.address}}</p>
     <p>Price level: {{cafe.priceLevel}}</p>
     <p>Beans used: </p>
-    
-     {{#each cafe.beans}}
-<div>
-<h3>{{name}}</h3>
-<img src="{{image}}" width="300px"/>
-</div>
+
+    {{#each cafe.beans}}
+      <div>
+        <h3>{{name}}</h3>
+        <img src="{{image}}" width="300px" />
+      </div>
+
+    {{/each}}
 
 {{/each}}</div>
 
