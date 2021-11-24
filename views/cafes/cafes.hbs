@@ -13,22 +13,28 @@
 </nav>
 
 
-<h1>Cafes</h1>
-<br>
 <p>
+
   {{#each listCafes}}
+  <div class="container">
+<div class="card card0">
+   <div class="border">
     <ul>
-     <a href = "/cafes/cafe-details/{{id}}">{{name}}</a> 
-     <img src="{{image}}" width="400px"/><br><br>
+   <h2><a class="cafe-card-title" href = "/cafes/cafe-details/{{id}}">{{name}} </h2>
+   <img class="cafe-img" src="{{image}}"/></a>
+     
      <form action="/users/favorites/{{id}}" method="POST">
-        <button><img src="/images/heartlogo.jpeg" width="30px"/></button>
+      <button class="heart-btn"><img src="/images/heartlogo.jpeg" width="30px"/></button>
+   
       </form>
     </ul>
-    <br>
+    </div> </div>
+    </div>
+    
+  
+  
   {{/each}} 
 </p>
-<video = src="../"></video>
-
 
 
 <p>Add your favorite

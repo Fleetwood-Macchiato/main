@@ -15,10 +15,11 @@
 <h2>Cafe Details</h2>
 <a href="/cafes/add-cafe">Add a New Cafe!</a>
 
+<div class="cafe-card">
 <ul>
   <li>
     <p>Name: {{cafe.name}}</p>
-    <img src="{{cafe.image}}" width="250px" />
+    <img class="cafe-img" src="{{cafe.image}}" />
     <p>Address: {{cafe.address}}</p>
     <p>Price level: {{cafe.priceLevel}}</p>
     <p>Beans used: </p>
@@ -28,6 +29,8 @@
 <h3>{{name}}</h3>
 <img src="{{image}}" width="300px"/>
 </div>
+
+{{/each}}</div>
 
     <p>Leave a review:</p>
     <form action="/cafes/cafe-review/{{cafe._id}}" method="POST">
@@ -49,7 +52,7 @@
 
       <button type="submit"> add a review </button>
     </form>
-    <img src="{{cafe.image}}" />
+   
     {{#each reviews}}
       {{user}}
       {{comment}}
