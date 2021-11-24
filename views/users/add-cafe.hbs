@@ -1,15 +1,3 @@
-<nav class="navbar">
-  <a class="navbar-logo" href="/home"><img
-      src="/images/coffeelogo.png"
-      width="20px"
-    /></a>
-
-  <div class="navbar-links-addcafe">
-
-  
-    <a class="navbar-btn" href="/users/profile"> Profile</a>
-  </div>
-</nav>
 
 
 <h2>Add New Cafe!</h2>
@@ -20,24 +8,20 @@
   <input type="text" name="name" required />
 
   <label for="review">A few words:</label>
-  <textarea type="text" name="review"required> </textarea>
+  <textarea type="text" name="review" required> </textarea>
 
   <label for="address">Location:</label>
   <input type="text" name="address" />
 
   <label for="picture">Picture:</label>
-  <input type="file" name="imgUrl"/>
+  <input type="file" name="imgUrl" />
 
   <label for="priceLevel">Price Level:</label>
-  <input type="text" name="priceLevel" />
+  <select name="priceLevel" id="priceLevel">
+    <option value="€">€</option>
+    <option value="€€">€€</option>
+    <option value="€€€">€€€</option>
+  </select>
 
-  <div>
-    <p>Select the beans:</p>
-    {{#each beanList}}
-      <input type="checkbox" name="beans" value={{_id}} />
-      <label for="beans"> {{name}}</label><br />
-    {{/each}}
-  </div>
-
-  <button type="submit">☕️</button>
+  <button type="submit">Add Your Favorite Cafe</button>
 </form>

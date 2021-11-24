@@ -1,23 +1,9 @@
-<nav class="navbar">
-  <a class="navbar-logo" href="/home"><img
-      src="/images/coffeelogo.png"
-      width="20px"
-    /></a>
 
-   
-  </div>
-</nav>
+<h1>Welcome {{userPopulated.username}}</h1>
 
-<h1>Profile</h1>
-
-{{userPopulated.username}}
-
-<form action="/auth/logout" method="GET">
-  <button type="submit">Logout</button>
-</form>
 <article>
   <img src="{{user.image}}" alt="user image" />
-  <p><b>Name:</b> {{userPopulated.name}}</p>
+
   <a href="/users/profile/{{userPopulated._id}}/edit">Edit</a>
-  <a href="/users/favorites/{{userPopulated.id}}">Favorites </a>
+  <a href="/users/favorites">Favorites</a>
 </article>
