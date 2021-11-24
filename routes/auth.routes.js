@@ -7,16 +7,30 @@ const bcrypt = require("bcrypt");
 router
   .route("/signup")
   .get((req, res, next) => {
-    res.render("auth/signup");
+    let userLoggedIn;
+    if (req.session.loggedInUser) userLoggedIn = true;
+    else userLoggedIn = false;
+    res.render("auth/signup", { userLoggedIn });
   })
   .post((req, res) => {
     const { username, password, email, favorites } = req.body;
+
+    let userLoggedIn;
+    if (req.session.loggedInUser) userLoggedIn = true;
+    else userLoggedIn = false;
+
     if (!username || !password)
-      res.render("auth/signup", { errorMessage: "All fields are required" });
+      res.render("auth/signup", {
+        errorMessage: "All fields are required",
+        userLoggedIn,
+      });
 
     User.findOne({ username }).then((user) => {
       if (user)
-        res.render("auth/signup", { errorMessage: "User already exists" });
+        res.render("auth/signup", {
+          errorMessage: "User already exists",
+          userLoggedIn,
+        });
 
       const salt = bcrypt.genSaltSync(saltRound);
       const hashPwd = bcrypt.hashSync(password, salt);
@@ -28,13 +42,16 @@ router
             username,
             email,
             _id,
-            favorites
+            favorites,
           };
           console.log("new user req session ", req.session.loggedInUser);
           res.redirect("/home");
         })
         .catch((error) =>
-          res.render("auth/signup", { errorMessage: "The DB broke" })
+          res.render("auth/signup", {
+            errorMessage: "The DB broke",
+            userLoggedIn,
+          })
         );
     });
   });
@@ -42,16 +59,22 @@ router
 router
   .route("/login")
   .get((req, res, next) => {
-    res.render("auth/login");
+    let userLoggedIn;
+    if (req.session.loggedInUser) userLoggedIn = true;
+    else userLoggedIn = false;
+    res.render("auth/login", { userLoggedIn });
   })
   .post((req, res) => {
-    console.log(
-      "new user req session in post login route ",
-      req.session.loggedInUser
-    );
+    let userLoggedIn;
+    if (req.session.loggedInUser) userLoggedIn = true;
+    else userLoggedIn = false;
+
     const { username, password } = req.body;
     if (!username || !password)
-      res.render("auth/login", { errorMessage: "All fields are required" });
+      res.render("auth/login", {
+        errorMessage: "All fields are required",
+        userLoggedIn,
+      });
 
     User.findOne({ username })
       .then((user) => {
@@ -61,7 +84,7 @@ router
         if (isPwdCorrect) {
           //res.redirect("/users/profile");
           req.session.loggedInUser = user;
-          res.render("users/profile", user);
+          res.render("users/profile", { user, userLoggedIn });
         }
 
         // else res.render("auth/login", { errorMessage: "User does not exist" });
