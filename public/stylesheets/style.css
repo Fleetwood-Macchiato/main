@@ -64,14 +64,6 @@ a {
 }
 
 .navbar {
-  /*width: 100%;
-  height: 8%;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;*/
-
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -79,15 +71,6 @@ a {
   padding: 0px 13px;
   margin-top: 10px;
 }
-
-/*.navbar-btn {
-  border: solid 3px rgb(182, 214, 241);
-  border-radius: 15px;
-  padding: 0.5em 0.8em;
-  background-color: rgb(182, 214, 241);
-  box-shadow: 1px 1px 1px 1px rgb(177, 175, 175);
-  color: white;
-}*/
 
 .navbar-btn {
   align-self: center;
@@ -135,18 +118,6 @@ a {
   display: flex;
   justify-content: space-between;
 }
-
-/*.navbar-links-login {
-  font-size: 0.6rem;
-  width: 17%;
-}
-
-.navbar-links-beansdetails {
-  font-size: 0.78rem;
-  width: 66%;
-  display: flex;
-  justify-content: space-evenly;
-}*/
 
 .navbar-links-addcafe {
   font-size: 0.78rem;
