@@ -525,3 +525,7 @@ form.form2 {
 #remove {
   margin-left: 40%;
 }
+
+.heart-btn {
+  border: none;
+}
