@@ -1,6 +1,6 @@
 
 
-<h1>{{userPopulated.username}}My favorites</h1>
+<h1>My favorite Cafes</h1>
 
 <div class="container">
    <div class="border">
@@ -17,11 +17,10 @@
         
         </li>
       </ul>
-
-      <form action="/users/{{_id}}/delete" method="POST">
+    </div>
+     <form action="/users/{{_id}}/delete" method="POST">
         <button class="navbar-btn" type="submit">Remove</button>
       </form>
-    </div>
     {{/each}}
   </div>
 </div>
@@ -30,5 +29,4 @@
   <p>There are no favorites</p>
 {{/if}}
 
-<a href="/users/profile/{{user._id}}">My profile</a>
-<a href="/cafes">Cafes</a>
+
