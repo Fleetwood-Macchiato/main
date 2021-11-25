@@ -21,8 +21,10 @@ router.post("/add-cafe", multerUploader.single("imgUrl"), async (req, res) => {
     if (req.session.loggedInUser) userLoggedIn = true;
     else userLoggedIn = false;
 
-    const { name, address, priceLevel, image, beans } = req.body;
+    const { name, address, priceLevel, beans } = req.body;
+
     let imgUrl;
+    
     if (req.file) {
       imgUrl = req.file.path;
     } else {

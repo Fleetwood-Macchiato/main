@@ -18,6 +18,12 @@ const userSchema = new Schema({
   },
 
   favorites: [{ type: Schema.Types.ObjectId, ref: "Cafes", default: [] }],
+  
+  image: {
+    type: String,
+    default:
+      "https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg",
+  }
 });
 
 const User = model("User", userSchema);

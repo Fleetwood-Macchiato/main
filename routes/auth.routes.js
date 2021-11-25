@@ -3,6 +3,7 @@ const User = require("../models/User.model");
 const router = express.Router();
 const saltRound = 5;
 const bcrypt = require("bcrypt");
+const multerUploader = require("../config/cloudinary");
 
 router
   .route("/signup")
@@ -12,9 +13,19 @@ router
     else userLoggedIn = false;
     res.render("auth/signup", { userLoggedIn });
   })
-  .post((req, res) => {
+  .post( multerUploader.single("image"), (req, res) => {
     const { username, password, email, favorites } = req.body;
 
+    // Retrieving the image from the form using Cloudinary
+    let image;
+    if (req.file) {
+      image = req.file.path;
+    } else {
+      image =
+        "https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg";
+    }
+
+    // Checking if the user is logged in to change the navbar partial
     let userLoggedIn;
     if (req.session.loggedInUser) userLoggedIn = true;
     else userLoggedIn = false;
@@ -32,17 +43,19 @@ router
           userLoggedIn,
         });
 
+
       const salt = bcrypt.genSaltSync(saltRound);
       const hashPwd = bcrypt.hashSync(password, salt);
 
-      User.create({ username, password: hashPwd, email, favorites })
+      User.create({ username, password: hashPwd, email, favorites, image })
         .then((newUser) => {
-          const { _id, username, email, favorites } = newUser;
+          const { _id, username, email, favorites, image } = newUser;
           req.session.loggedInUser = {
             username,
             email,
             _id,
             favorites,
+            image,
           };
           console.log("new user req session ", req.session.loggedInUser);
           res.redirect("/home");
