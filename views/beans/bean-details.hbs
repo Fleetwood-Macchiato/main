@@ -1,19 +1,11 @@
-<div class="other-bkgrnd">
-
-<div class="container">
-<div class="card card0">
-   <div class="border">
 <ul>
   <li>
     <p>Name: {{bean.name}}</p>
     <p>Origin: {{bean.origin}}</p>
     <p>Flavor profile: {{bean.flavorProfile}}</p>
     {{#each bean.cafe}}
-      <p>Cafe: {{name}}</p>
+      <p>Cafe: <a href="/cafes/cafe-details/{{id}}">{{name}} </a></p>
     {{/each}}
     <img src="{{bean.image}}" width="300px" />
   </li>
 </ul>
-
-</div></div></div>
-</div>
