@@ -6,10 +6,12 @@
     {{#if userLoggedIn}}
     
       <a class="navbar-btn" href="/users/profile/{{currentUserInfo._id}}">Profile</a>
-      <a class="navbar-btn" href="/cafes/add-cafe">Add</a>
+      <a class="navbar-btn large-btn" href="/cafes/add-cafe">Add Cafe</a>
+       <a class="navbar-btn" href="/cafes/cafes">Cafes</a>
       <a class="navbar-btn" href="/auth/logout">Logout</a>
     </div>
     {{else}}
+     <a class="navbar-btn" href="/cafes/cafes">Cafes</a>
       <a class="navbar-btn" href="/auth/login" align="center"> Login </a>
       <a class="navbar-btn" href="/auth/signup" align="center"> Sign Up </a>
     {{/if}}
