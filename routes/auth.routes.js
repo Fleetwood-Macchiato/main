@@ -13,7 +13,7 @@ router
     else userLoggedIn = false;
     res.render("auth/signup", { userLoggedIn });
   })
-  .post( multerUploader.single("image"), (req, res) => {
+  .post(multerUploader.single("image"), (req, res) => {
     const { username, password, email, favorites } = req.body;
 
     // Retrieving the image from the form using Cloudinary
@@ -25,7 +25,6 @@ router
         "https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg";
     }
 
-    // Checking if the user is logged in to change the navbar partial
     let userLoggedIn;
     if (req.session.loggedInUser) userLoggedIn = true;
     else userLoggedIn = false;
@@ -42,7 +41,6 @@ router
           errorMessage: "User already exists",
           userLoggedIn,
         });
-
 
       const salt = bcrypt.genSaltSync(saltRound);
       const hashPwd = bcrypt.hashSync(password, salt);
@@ -95,12 +93,10 @@ router
           res.render("auth/login", { errorMessage: "User does not exist" });
         const isPwdCorrect = bcrypt.compareSync(password, user.password); // first password is one from the form. the second is the encrypted one from the database
         if (isPwdCorrect) {
-          //res.redirect("/users/profile");
           req.session.loggedInUser = user;
-          res.render("users/profile", { user, userLoggedIn });
+          console.log(req.session.loggedInUser);
+          res.redirect("/users/profile");
         }
-
-        // else res.render("auth/login", { errorMessage: "User does not exist" });
       })
       .catch((err) => console.log(err));
   });
