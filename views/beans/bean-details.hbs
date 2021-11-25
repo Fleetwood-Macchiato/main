@@ -1,11 +1,11 @@
-
-
 <ul>
   <li>
     <p>Name: {{bean.name}}</p>
     <p>Origin: {{bean.origin}}</p>
     <p>Flavor profile: {{bean.flavorProfile}}</p>
-    <p>Cafe: {{cafe.name}}</p>
-    <img src="{{bean.image}}" width="300px"/>
+    {{#each bean.cafe}}
+      <p>Cafe: {{name}}</p>
+    {{/each}}
+    <img src="{{bean.image}}" width="300px" />
   </li>
 </ul>
