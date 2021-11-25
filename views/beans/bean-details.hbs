@@ -1,21 +1,23 @@
 <div class="other-bkgrnd">
 
-<div class="container">
-<div class="card card0">
-   <div class="border">
-<ul class="bean-text">
-  <li>
-    <h1 class="bean-card-title">{{bean.name}}</h1>
-    <p>Origin: {{bean.origin}}</p>
-    <p>Flavor profile: {{bean.flavorProfile}}</p>
-    {{#each bean.cafe}}
-      <p>Cafe: <a href="/cafes/cafe-details/{{id}}">{{name}} </a></p>
-    {{/each}}
-  <!--  <img class="beanimage" src="/images/beanbean.jpg"/>-->
-  </li>
-</ul>
+  <div class="container">
+    <div class="card card0">
+      <div class="border">
+        <ul class="bean-text">
+          <li>
+            <h1 class="bean-card-title">{{bean.name}}</h1>
+            <img src="{{bean.image}}" width="200px" />
+            <p>Origin: {{bean.origin}}</p>
+            <p>Flavor profile: {{bean.flavorProfile}}</p>
+            {{#each bean.cafe}}
+              <p>Cafe: <a href="/cafes/cafe-details/{{id}}">{{name}} </a></p>
+            {{/each}}
+            <!--  <img class="beanimage" src="/images/beanbean.jpg"/>-->
+          </li>
+        </ul>
 
-</div></div></div>
+      </div></div></div>
 </div>
 
-<!--{{bean.image}}-->  <!--width="300px"-->
+{{bean.image}}<!---->
+<!--width="300px"-->
