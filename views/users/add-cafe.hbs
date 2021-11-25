@@ -1,27 +1,30 @@
+<h2 class="cafe-card-title">Add Your Favorite Cafe!</h2>
 
+<div class="container2">
+  <form action="/cafes/add-cafe" method="POST" enctype="multipart/form-data">
 
-<h2>Add New Cafe!</h2>
+    <label for="name">Cafe name:</label>
+    <input type="text" name="name" required />
+    </br>
+    
+    <label for="review">A few words:</label>
+    <textarea type="text" name="review" required> </textarea>
+    </br>
 
-<form action="/cafes/add-cafe" method="POST" enctype="multipart/form-data">
+    <label for="address">Location:</label>
+    <input type="text" name="address" />
+    </br>
 
-  <label for="name">Cafe name:</label>
-  <input type="text" name="name" required />
+    <label for="picture">Picture:</label>
+    <input type="file" name="imgUrl" />
 
-  <label for="review">A few words:</label>
-  <textarea type="text" name="review" required> </textarea>
-
-  <label for="address">Location:</label>
-  <input type="text" name="address" />
-
-  <label for="picture">Picture:</label>
-  <input type="file" name="imgUrl" />
-
-  <label for="priceLevel">Price Level:</label>
-  <select name="priceLevel" id="priceLevel">
-    <option value="€">€</option>
-    <option value="€€">€€</option>
-    <option value="€€€">€€€</option>
-  </select>
-
-  <button type="submit">Add Your Favorite Cafe</button>
-</form>
+    <label for="priceLevel">Price Level:</label>
+    <select name="priceLevel" id="priceLevel">
+      <option value="€">€</option>
+      <option value="€€">€€</option>
+      <option value="€€€">€€€</option>
+    </select>
+</br>
+    <button type="submit">Add</button>
+  </form>
+</div>
