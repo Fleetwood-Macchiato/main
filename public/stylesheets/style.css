@@ -116,6 +116,9 @@ a {
   touch-action: manipulation;
 }
 
+.large-btn {
+  width: 100px;
+}
 .navbar-btn:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px -5px;
   transform: translate3d(0, 2px, 0);

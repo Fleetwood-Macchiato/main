@@ -25,7 +25,6 @@ router
         "https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg";
     }
 
-    // Checking if the user is logged in to change the navbar partial
     let userLoggedIn;
     if (req.session.loggedInUser) userLoggedIn = true;
     else userLoggedIn = false;
@@ -97,8 +96,6 @@ router
           req.session.loggedInUser = user;
           res.redirect("/users/profile");
         }
-
-        // else res.render("auth/login", { errorMessage: "User does not exist" });
       })
       .catch((err) => console.log(err));
   });
