@@ -1,31 +1,31 @@
 <div class="other-bkgrnd">
-<div class="login-form">
-  <form class="form1" action="/auth/login" method="post">
-    <label for="username"></label>
-    <input
-      class="un"
-      required
-      type="text"
-      name="username"
-      placeholder="type your username"
-      align="center"
-    />
+  <div class="login-form">
+    <form class="form1" action="/auth/login" method="post">
+      <label for="username"></label>
+      <input
+        class="un"
+        required
+        type="text"
+        name="username"
+        placeholder="type your username"
+        align="center"
+      />
 
-    <label for="password"></label>
-    <input
-      class="pass"
-      required
-      type="password"
-      name="password"
-      placeholder="password..."
-    />
+      <label for="password"></label>
+      <input
+        class="pass"
+        required
+        type="password"
+        name="password"
+        placeholder="password..."
+      />
 
-    <button type="submit" class="submit">Login</button>
-  </form></div>
-{{#if errorMessage}}
-  <p>
+      <button type="submit" class="submit-button">Login</button>
+    </form></div>
+  {{#if errorMessage}}
+    <p>
 
-    {{errorMessage}}
-  </p>
-{{/if}}
+      {{errorMessage}}
+    </p>
+  {{/if}}
 </div>
