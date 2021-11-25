@@ -32,10 +32,6 @@ body {
   /*background-color: rgb(181, 194, 194);*/
 }
 
-.form {
-  background-color: white;
-  padding: 20px;
-}
 .form label {
   width: 150px;
   display: block;
@@ -51,7 +47,7 @@ body {
   margin: 20px;
 }
 .submit-button {
-  background-color: #c7d7e9;
+  background-color: transparent;
   padding: 10px 20px;
   border-radius: 10px;
   margin: 10px auto;
@@ -91,12 +87,11 @@ a {
 
 .navbar-btn {
   align-self: center;
-  background-color: #fff;
+  background-color: transparent;
   background-image: none;
   background-position: 0 90%;
   border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
-  border-style: solid;
-  border-width: 2px;
+  border: none;
   box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
   box-sizing: border-box;
   color: #41403e;
@@ -221,6 +216,7 @@ h4 {
 .home-screen-btns {
   padding: 5px;
   z-index: 2;
+
 }
 
 .quote {
