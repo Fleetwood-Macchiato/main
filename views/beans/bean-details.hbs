@@ -3,17 +3,19 @@
 <div class="container">
 <div class="card card0">
    <div class="border">
-<ul>
+<ul class="bean-text">
   <li>
-    <p>Name: {{bean.name}}</p>
+    <h1 class="bean-card-title">{{bean.name}}</h1>
     <p>Origin: {{bean.origin}}</p>
     <p>Flavor profile: {{bean.flavorProfile}}</p>
     {{#each bean.cafe}}
-      <p>Cafe: {{name}}</p>
+      <p>Cafe: <a href="/cafes">{{name}}</a></p>
     {{/each}}
-    <img src="{{bean.image}}" width="300px" />
+  <!--  <img class="beanimage" src="/images/beanbean.jpg"/>-->
   </li>
 </ul>
 
 </div></div></div>
 </div>
+
+<!--{{bean.image}}-->  <!--width="300px"-->
