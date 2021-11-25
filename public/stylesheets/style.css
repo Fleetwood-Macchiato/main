@@ -29,6 +29,31 @@ body {
   /*background-color: rgb(181, 194, 194);*/
 }
 
+.form {
+  background-color: white;
+  padding: 20px;
+}
+.form label {
+  width: 150px;
+  display: block;
+}
+
+.form input {
+  width: 150px;
+  display: block;
+  border: solid 1px gray;
+}
+.fields {
+  display: flex;
+  margin: 20px;
+}
+.submit-button {
+  background-color: #c7d7e9;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: block;
+}
 a {
   color: #00b7ff;
   text-decoration: none;
