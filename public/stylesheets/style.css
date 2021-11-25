@@ -11,10 +11,22 @@ body {
   width: 100%;
   font-family: "Neucha", sans-serif;
   place-items: center;
-  background: linear-gradient(315deg, #ffffff, #c7d7e9);
-  background-repeat: no-repeat;
+  background: linear-gradient(92deg, #ffffff, #c7d7e9);
+  background-repeat: repeat;
   background-size: cover;
   background-position: center;
+}
+
+.testvideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.other-bkgrnd {
+  width: 100%;
+  /*background-color: rgb(181, 194, 194);*/
 }
 
 a {
@@ -32,13 +44,12 @@ a {
   padding: 0 10px;*/
 
   width: 100%;
-  height: 14%;
-  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px 10px;
-  margin-top: 18px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 /*.navbar-btn {
@@ -90,7 +101,7 @@ a {
 }
 
 .navbar-links {
-  width: 42%;
+  width: 32%;
   display: flex;
   justify-content: space-between;
 }
@@ -114,11 +125,12 @@ a {
   justify-content: space-evenly;
 }
 .barna-text {
-  color: black; /*rgb(225, 245, 245);*/
+  color: white;
   font-size: 4rem;
   font-weight: 900;
   display: flex;
   justify-content: center;
+  z-index: 2;
   -webkit-animation: text-focus-in 0.75s cubic-bezier(0.55, 0.085, 0.68, 0.53)
     both;
   animation: text-focus-in 0.75s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
@@ -177,10 +189,12 @@ h4 {
 
 .home-screen-btns {
   padding: 5px;
+  z-index: 2;
 }
 
 .quote {
-  color: black;
+  color: white;
+  z-index: 2;
 }
 
 footer {
@@ -360,10 +374,10 @@ form.form2 {
   width: 12rem;
 }
 
-.ul {
+.ul-card {
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  align-items: center;
 }
 
 .bean-card-title {
