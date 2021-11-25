@@ -1,13 +1,11 @@
-<div class="other-bkgrnd">
-  
-  <p>
+    <p>
   {{#each listCafes}}
   <div class="container">
 <div class="card card0">
     <ul class="ul-card">
    <h2><a class="cafe-card-title" href = "/cafes/cafe-details/{{id}}">{{name}} </h2>
    <img src="{{imgUrl}}" class="cafe-img"/></a>
-     <h4 align="center">{{address}}</h4>
+     <h4 class="cafeh4" align="center">{{address}}</h4>
   
      <form action="/users/favorites/{{id}}" method="POST">
         <button class="heart-btn" type="submit">
