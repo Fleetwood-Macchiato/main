@@ -381,13 +381,6 @@ form.form2 {
   align-items: center;
 }
 
-.bean-card-title {
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  color: rgb(104, 184, 216);
-}
-
 * {
   margin: 0;
   padding: 0;
