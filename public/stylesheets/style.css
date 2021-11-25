@@ -522,7 +522,7 @@ form.form2 {
 }
 
 .profile-img {
-  max-width: 30%;
-  max-height: auto;
-  border-radius: 30%;
+  max-width: 35%;
+  height: 23%;
+  border-radius: 50%;
 }
