@@ -7,7 +7,7 @@
 <ul>
   <li>
     
-    <p>{{cafe.name}}</p>
+    <p class="cafe-card-title">{{cafe.name}}</p>
     <img class="cafe-img" src="{{cafe.imgUrl}}" />
     <p>{{cafe.address}}</p>
     <p>Price level: {{cafe.priceLevel}}</p>
@@ -20,14 +20,11 @@
 
     {{#each cafe.beans}}
       <div>
-        <h3>{{name}}</h3>
-        <img src="{{image}}" width="300px" />
-      </div>
+    <a href="/beans/bean-details/{{id}}">{{name}} </a>      </div>
     {{/each}}
 
 </div></div></div></div>
 
-    <p>Leave a review:</p>
     <form class="form" action="/cafes/cafe-review/{{cafe._id}}" method="POST">
      <div class="fields">
       <label class="form-label" for="name-input">Username:</label>
@@ -36,7 +33,6 @@
         type="text"
         name="user"
         id="user-input"
-        placeholder="Username"
       />
       </div>
         <div class="fields">
@@ -45,16 +41,20 @@
         class="form-input"
         name="comment"
         id="review-input"
-        placeholder="Your review"
       ></textarea>
 </div>
       <button class="submit-button" type="submit"> add a review </button>
     </form>
-   
+   <div class="reviews">
     {{#each reviews}}
-      {{user}}
-      {{comment}}
+    <br>
+      <span><span class="bold">Username: </span>{{user}} </span>
+      <br>
+
+      <span><span class="bold"> Review:  </span>{{comment}}</span>
+      <br>
     {{/each}}
+    </div>
   </li>
 
 </ul>
