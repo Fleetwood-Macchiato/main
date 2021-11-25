@@ -26,6 +26,9 @@ body {
 
 .other-bkgrnd {
   width: 100%;
+  flex-direction: column;
+  align-content: space-between;
+  padding: 20px 0px;
   /*background-color: rgb(181, 194, 194);*/
 }
 
@@ -379,7 +382,6 @@ form.form2 {
 }
 
 .card1 {
-  height: 500px;
   width: 350px;
   background: grey;
   border-radius: 10px;
@@ -451,6 +453,7 @@ form.form2 {
   -webkit-box-shadow: 0 2px 5px rgb(0 0 0 / 8%);
   -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.075);
   text-align: center;
+  display: flex;
 }
 
 .profileh2 {
@@ -531,7 +534,18 @@ form.form2 {
 }
 
 .profile-img {
-  max-width: 30%;
-  max-height: auto;
-  border-radius: 30%;
+  max-width: 35%;
+  height: 23%;
+  border-radius: 50%;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+ 
+}
+.bold {
+  font-weight: bold;
 }

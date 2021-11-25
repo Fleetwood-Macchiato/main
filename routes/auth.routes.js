@@ -94,7 +94,6 @@ router
         const isPwdCorrect = bcrypt.compareSync(password, user.password); // first password is one from the form. the second is the encrypted one from the database
         if (isPwdCorrect) {
           req.session.loggedInUser = user;
-          console.log(req.session.loggedInUser);
           res.redirect("/users/profile");
         }
       })
