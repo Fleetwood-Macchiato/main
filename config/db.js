@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 
 const MONGO_URL = process.env.MONGODB_URI;
 
-console.log("MONGO_URL: ", MONGO_URL);
+
 mongoose
   .connect(MONGO_URL, {
     useNewUrlParser: true,
@@ -16,9 +16,7 @@ mongoose
     useCreateIndex: true,
   })
   .then((x) => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
+   
   })
   .catch((err) => {
     console.error("Error connecting to mongo: ", err);
