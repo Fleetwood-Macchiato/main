@@ -27,25 +27,28 @@
 
 </div></div></div></div>
 
-    <p>Leave a review:</p>
-    <form action="/cafes/cafe-review/{{cafe._id}}" method="POST">
+   
+    <form class="form" action="/cafes/cafe-review/{{cafe._id}}" method="POST">
+     <div class="fields">
       <label class="form-label" for="name-input">Username:</label>
       <input
         class="form-input"
         type="text"
         name="user"
         id="user-input"
-        placeholder="Username"
+   
       />
+      </div>
+        <div class="fields">
       <label class="form-label" for="review-input">Review:</label>
       <textarea
         class="form-input"
         name="comment"
         id="review-input"
-        placeholder="Your review"
+ 
       ></textarea>
-
-      <button type="submit"> add a review </button>
+</div>
+      <button class="submit-button" type="submit"> add a review </button>
     </form>
    
     {{#each reviews}}
