@@ -6,7 +6,7 @@ const Api = require("../apis/api");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 /* GET home page. */
-router.get("/home", (req, res) => {
+router.get("/", (req, res) => {
   let userLoggedIn;
   if (req.session.loggedInUser) userLoggedIn = true;
   else userLoggedIn = false;
