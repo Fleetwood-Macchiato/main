@@ -1,9 +1,28 @@
 
 <h1>Welcome {{userPopulated.username}}</h1>
 
+<h1 class="cafe-card-title">Profile</h1>
+
+{{userPopulated.username}}
+
+
+<div class="container2">
 <article>
   <img src="{{user.image}}" alt="user image" />
-
-  <a href="/users/profile/{{userPopulated._id}}/edit">Edit</a>
-  <a href="/users/favorites">Favorites</a>
+  <h2 class="profileh2"> {{userPopulated.name}}</h2>
+       <h4 class="profileh4">
+         <a href="/users/profile/{{userPopulated._id}}/edit">Edit</a>
+<a href="/users/favorites{{userPopulated.id}}">Favorites</a>
+</h4>
+  <p class="profilep">Any random bio text...</p>
+  
 </article>
+
+  </div>
+
+
+
+
+<form action="/auth/logout" method="GET">
+  <button type="submit" class="navbar-btn">Logout</button>
+</form>
