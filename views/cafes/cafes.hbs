@@ -1,34 +1,23 @@
-
+<div class="other-bkgrnd">
   
-<p>
+  <p>
   {{#each listCafes}}
   <div class="container">
 <div class="card card0">
-   <div class="border">
-    <ul>
+    <ul class="ul-card">
    <h2><a class="cafe-card-title" href = "/cafes/cafe-details/{{id}}">{{name}} </h2>
    <img src="{{imgUrl}}" class="cafe-img"/></a>
      <h4 align="center">{{address}}</h4>
   
      <form action="/users/favorites/{{id}}" method="POST">
-   <button class="heart-btn">
-
-    <a href="#" class="btn btn-white btn-				 animate">
-      <img src="/images/heartlogo.jpeg" width="30px" />
-    </a></button>
-</div>
-  
+        <button class="heart-btn" type="submit">
+            <img src="/images/heart1.png" width="30px" />
+        </button>
       </form>
     </ul>
-    </div> </div>
-    </div>
+  </div>
+ </div>
+    
   
   {{/each}} 
 </p>
-
-
-<p>Add your favorite
-<a href="/cafes/add-cafe">cafe!</a><br><br>
-</p>
-
-</body>
