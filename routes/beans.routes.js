@@ -25,7 +25,7 @@ router.get("/bean-details/:id", async (req, res) => {
     else userLoggedIn = false;
 
     const { id } = req.params;
-    let bean = await Bean.findById(id);
+    let bean = await Bean.findById(id).populate("cafe");
 
     res.render("beans/bean-details", { bean, userLoggedIn });
   } catch (err) {

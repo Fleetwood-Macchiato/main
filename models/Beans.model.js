@@ -6,7 +6,7 @@ const beanSchema = new Schema({
   origin: String,
   flavorProfile: String,
   image: String,
-  cafe: [{ type: Schema.Types.ObjectId, ref: "Cafe" }],
+  cafe: [{ type: Schema.Types.ObjectId, ref: "Cafes" }],
 });
 
 module.exports = model("Bean", beanSchema);
