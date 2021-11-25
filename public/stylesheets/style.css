@@ -547,6 +547,6 @@ form.form2 {
   font-weight: bold;
 }
 
-#remove {
-  margin-left: 40%;
+.heart-btn {
+  border: none;
 }
