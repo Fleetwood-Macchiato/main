@@ -225,7 +225,6 @@ h4 {
 .home-screen-btns {
   padding: 5px;
   z-index: 2;
-
 }
 
 .quote {
@@ -543,9 +542,8 @@ form.form2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
- 
 }
 .bold {
   font-weight: bold;
 }
+
