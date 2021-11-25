@@ -10,6 +10,7 @@
   </div>
 </nav>
 
+  
 <p>
   {{#each listCafes}}
   <div class="container">
@@ -18,10 +19,16 @@
     <ul>
    <h2><a class="cafe-card-title" href = "/cafes/cafe-details/{{id}}">{{name}} </h2>
    <img src="{{imgUrl}}" class="cafe-img"/></a>
-     
+     <h4 align="center">{{address}}</h4>
+  
      <form action="/users/favorites/{{id}}" method="POST">
-      <button class="heart-btn"><img src="/images/heartlogo.jpeg" width="30px"/></button>
-   
+   <button class="heart-btn">
+
+    <a href="#" class="btn btn-white btn-				 animate">
+      <img src="/images/heartlogo.jpeg" width="30px" />
+    </a></button>
+</div>
+  
       </form>
     </ul>
     </div> </div>
@@ -32,5 +39,7 @@
 
 
 <p>Add your favorite
-<a href="/cafes/add-cafe">cafe!</a>
+<a href="/cafes/add-cafe">cafe!</a><br><br>
 </p>
+
+</body>

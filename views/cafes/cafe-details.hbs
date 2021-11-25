@@ -12,22 +12,27 @@
   </div>
 </nav>
 
-<h2>Cafe Details</h2>
-<a href="/cafes/add-cafe">Add a New Cafe!</a>
+<!--<h2>Cafe Details</h2>
+<a href="/cafes/add-cafe">Add a New Cafe!</a>-->
 
+
+ <div class="container">
+<div class="card card1">
+   <div class="border">
 <div class="cafe-card">
 <ul>
   <li>
     
-    <p>Name: {{cafe.name}}</p>
+    <p>{{cafe.name}}</p>
     <img class="cafe-img" src="{{cafe.imgUrl}}" />
-    <p>Address: {{cafe.address}}</p>
+    <p>{{cafe.address}}</p>
     <p>Price level: {{cafe.priceLevel}}</p>
     <p>Beans used: </p>
-     <form action="/users/favorites/{{id}}" method="POST">
+    <!-- <form action="/users/favorites/{{id}}" method="POST">
       <button class="heart-btn"><img src="/images/heartlogo.jpeg" width="30px"/></button>
    
-      </form>
+      </form>-->
+
 
     {{#each cafe.beans}}
       <div>
@@ -36,7 +41,7 @@
       </div>
     {{/each}}
 
-</div>
+</div></div></div></div>
 
     <p>Leave a review:</p>
     <form action="/cafes/cafe-review/{{cafe._id}}" method="POST">
