@@ -1,27 +1,30 @@
-<div class="other-bkgrnd">
-
+<div class="other-bkgrnd form">
+<div class="fields">
     <label for="name">Cafe name:</label>
     <input type="text" name="name" required />
-    </br>
-    
+  </div>
+    <div class="fields">
     <label for="review">A few words:</label>
     <textarea type="text" name="review" required> </textarea>
-    </br>
-
+   </div>
+<div class="fields">
     <label for="address">Location:</label>
     <input type="text" name="address" />
-    </br>
-
+  </div>
+<div class="fields">
     <label for="picture">Picture:</label>
     <input type="file" name="imgUrl" />
-
+</div>
+<div class="fields">
     <label for="priceLevel">Price Level:</label>
     <select name="priceLevel" id="priceLevel">
       <option value="€">€</option>
       <option value="€€">€€</option>
       <option value="€€€">€€€</option>
     </select>
-</br>
-    <button type="submit">Add</button>
+    </div>
+
+
+    <button class="submit-button" type="submit">Add</button>
   </form>
 </div>
