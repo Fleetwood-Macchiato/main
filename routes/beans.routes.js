@@ -5,11 +5,14 @@ const router = express.Router();
 const Bean = require("../models/Beans.model");
 
 router.get("/", async (req, res) => {
+  let userLoggedIn;
+  if (req.session.loggedInUser) userLoggedIn = true;
+  else userLoggedIn = false;
+
   try {
     let beanList = await Bean.find();
-    console.log("beans from db", beanList);
 
-    res.render("beans/beans", { beanList });
+    res.render("beans/beans", { beanList, userLoggedIn });
   } catch (err) {
     (err) => console.log(err);
   }
@@ -17,11 +20,14 @@ router.get("/", async (req, res) => {
 
 router.get("/bean-details/:id", async (req, res) => {
   try {
-    const {id} = req.params
-    let bean = await Bean.findById(id);
-    console.log("beans from db", bean);
+    let userLoggedIn;
+    if (req.session.loggedInUser) userLoggedIn = true;
+    else userLoggedIn = false;
 
-    res.render("beans/bean-details", {bean} );
+    const { id } = req.params;
+    let bean = await Bean.findById(id);
+
+    res.render("beans/bean-details", { bean, userLoggedIn });
   } catch (err) {
     (err) => console.log(err);
   }

@@ -7,16 +7,13 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 /* GET home page. */
 router.get("/home", (req, res) => {
+  let userLoggedIn;
+  if (req.session.loggedInUser) userLoggedIn = true;
+  else userLoggedIn = false;
+
   User.find().then((users) =>
-    res.render("index", { title: "BarnaBrew", users, isLoggedIn })
+    res.render("index", { title: "BarnaBrew", users, userLoggedIn })
   );
 });
-
-/* GET from API */
-/* router.get("/api", (req, res) => {
-  Api.getAll().then((entity) =>
-    res.render("index", { title: "Coffee Heaven", users: entity })
-  );
-}); */
 
 module.exports = router;
