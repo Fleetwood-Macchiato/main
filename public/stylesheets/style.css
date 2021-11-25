@@ -247,8 +247,8 @@ footer {
 
 .login-form {
   background-color: #ffffff;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 380px;
   margin: 7em auto;
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
@@ -367,7 +367,7 @@ form.form2 {
 }
 
 .card {
-  height: 379px;
+  height: 380px;
   width: 350px;
   background: grey;
   border-radius: 10px;
@@ -507,8 +507,8 @@ form.form2 {
 }
 
 .profile-img {
-  max-width: 45%;
-  height: 33%;
+  max-width: 55%;
+  height: 43%;
   border-radius: 50%;
   margin: 40px;
 }
@@ -516,7 +516,7 @@ form.form2 {
 .reviews {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 20px;
 }
 .bold {
   font-weight: bold;
