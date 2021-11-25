@@ -46,5 +46,19 @@ router.post("/:id/delete", async (req, res, next) => {
     console.log(err);
   }
 });
+router
+  .route("/edit/:id")
+  .get((req, res) => {
+    User.findById(req.params.id).then((user) => {
+      res.render("users/edit-profile", user);
+    });
+  })
+  .post((req, res) => {
+    const userId = req.params.id;
+    const { username, email } = req.body;
+    User.findByIdAndUpdate(userId, { username, email }).then((user) => {
+      res.redirect(`/users/profile`);
+    });
+  });
 
 module.exports = router;

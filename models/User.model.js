@@ -17,7 +17,7 @@ const userSchema = new Schema({
     unique: true,
   },
 
-  favorites: [{ type: Schema.Types.ObjectId, ref: 'Cafes', default: [] }]
+  favorites: [{ type: Schema.Types.ObjectId, ref: "Cafes", default: [] }],
 });
 
 const User = model("User", userSchema);
