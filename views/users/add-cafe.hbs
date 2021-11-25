@@ -1,30 +1,26 @@
-<div class="other-bkgrnd form">
-<div class="fields">
-    <label for="name">Cafe name:</label>
-    <input type="text" name="name" required />
-  </div>
-    <div class="fields">
-    <label for="review">A few words:</label>
-    <textarea type="text" name="review" required> </textarea>
-   </div>
-<div class="fields">
-    <label for="address">Location:</label>
-    <input type="text" name="address" />
-  </div>
-<div class="fields">
-    <label for="picture">Picture:</label>
-    <input type="file" name="imgUrl" />
-</div>
-<div class="fields">
-    <label for="priceLevel">Price Level:</label>
-    <select name="priceLevel" id="priceLevel">
-      <option value="€">€</option>
-      <option value="€€">€€</option>
-      <option value="€€€">€€€</option>
-    </select>
-    </div>
+  <div class="card">
+    <form class="form" action="/cafes/add-cafe" method="POST">
 
+      <label for="name">Cafe name:</label>
+      <input type="text" name="name" required />
 
-    <button class="submit-button" type="submit">Add</button>
-  </form>
+      <label for="review">A few words:</label>
+      <textarea type="text" name="review" required> </textarea>
+
+      <label for="address">Location:</label>
+      <input type="text" name="address" />
+
+      <label for="picture">Picture:</label>
+      <input type="file" name="imgUrl" />
+
+      <label for="priceLevel">Price Level:</label>
+      <select name="priceLevel" id="priceLevel">
+        <option value="€">€</option>
+        <option value="€€">€€</option>
+        <option value="€€€">€€€</option>
+      </select>
+
+      <button class="submit-button" type="submit">Add</button>
+    </form>
+  </div>
 </div>
