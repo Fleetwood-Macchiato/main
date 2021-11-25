@@ -1,23 +1,44 @@
 <div class="other-bkgrnd">
 <div class="login-form">
-<h2 class="login-text" align="center"></h2>
-<form class="form2" action="/auth/signup" method="post">
-  <label for="username"></label>
-  <input class="un"
-    required
-    type="text"
-    name="username"
-    placeholder="choose a username"
-  />
+  <h2 class="login-text" align="center"></h2>
+  <form
+    class="form2"
+    action="/auth/signup"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <label for="username"></label>
+    <input
+      class="un"
+      required
+      type="text"
+      name="username"
+      placeholder="choose a username"
+    />
 
-  <label for="email"></label>
-  <input class="pass" required type="email" name="email" placeholder="type your email" />
+    <label for="email"></label>
+    <input
+      class="pass"
+      required
+      type="email"
+      name="email"
+      placeholder="type your email"
+    />
 
-  <label for="password"></label>
-  <input class="pass" required type="password" name="password" placeholder="choose a password" />
+    <label for="password"></label>
+    <input
+      class="pass"
+      required
+      type="password"
+      name="password"
+      placeholder="choose a password"
+    />
 
-  <button type="submit" class="submit" align="center">Sign me up!</button>
-</form></div>
+    <label for="picture">Picture:</label>
+    <input type="file" name="image" />
+
+    <button type="submit" class="submit" align="center">Sign me up!</button>
+  </form></div>
 {{#if errorMessage}}
   <p>
 

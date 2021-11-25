@@ -495,3 +495,9 @@ form.form2 {
     transform: translateY(0px);
   }
 }
+
+.profile-img {
+  max-width: 30%;
+  max-height: auto;
+  border-radius: 30%;
+}
