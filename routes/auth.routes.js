@@ -56,7 +56,7 @@ router
             image,
           };
           console.log("new user req session ", req.session.loggedInUser);
-          res.redirect("/home");
+          res.redirect("/");
         })
         .catch((error) =>
           res.render("auth/signup", {
