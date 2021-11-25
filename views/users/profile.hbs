@@ -1,17 +1,13 @@
-<div class="container2">
+
   <div class = "card">
   <div class="other-bkgrnd">
   <h1 class="cafe-card-title">Welcome {{userPopulated.username}}</h1>
   <img src="{{userPopulated.image}}" class ="profile-img"alt="user image" />
-  <h2 class="profileh2"> {{userPopulated.name}}</h2>
-       <h4 class="profileh4">
+  <h4 class="profileh4">
+  <a href="/users/favorites"/>Favorites</a>
+  <br><br>
   <a href="/users/edit/{{userPopulated._id}}">Edit profile</a>
-  <br>  <br>
-
-<a href="/users/favorites"/>Favorites</a>
 </h4>
-  
 </div>
-  </div>
+</div>
 
-</div>
