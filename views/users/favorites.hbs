@@ -1,26 +1,31 @@
+
 <div class="other-bkgrnd">
-<div class="fav-container">
-<h1 class="cafe-card-title">My Favorite Cafes</h1>
+     <div class="border">
 
-<div class="container">
-   <div class="border">
-{{#if userPopulated.favorites}}
-  {{#each userPopulated.favorites}}
-  <div class="card">
+  <h1 class="cafe-card-title">My Favorite Cafes</h1>
 
-      <ul>
-        <li>
-          <p class="bean-card-title">{{this.name}}</p>
-          <img class="bean-img" src="{{this.imgUrl}}" />
+  {{#if userPopulated.favorites}}
+    {{#each userPopulated.favorites}}
+    <div class="container">
+        <div class="card card0">
+                <ul class="ul-card">
+   <h2><a class="cafe-card-title" href = "/cafes/cafe-details/{{id}}">{{name}} </h2>
+   <br>
+          <img class="cafe-img" src="{{this.imgUrl}}" /></a>
+          <br>
           <p align="center">{{this.address}}</p>
           <p align="center">{{this.priceLevel}}</p>
-        
-        </li>
-      </ul>
-    </div>
-     <form action="/users/{{_id}}/delete" method="POST">
+          <br>
+
+        <form action="/users/{{_id}}/delete" method="POST">
         <button class="navbar-btn" type="submit">Remove</button>
       </form>
+        </li>
+        </ul>
+        
+        </div>
+    </div>
+     
     {{/each}}
   </div>
 </div>
@@ -28,4 +33,5 @@
 {{else}}
   <p>There are no favorites</p>
 {{/if}}
+</div>
 </div>
