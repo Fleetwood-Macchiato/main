@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
   try {
     let beanList = await Bean.find();
 
-    res.render("beans/beans", { beanList, userLoggedIn });
+    res.render("beans/beans", { beanList, userLoggedIn});
   } catch (err) {
     (err) => console.log(err);
   }

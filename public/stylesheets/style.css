@@ -17,6 +17,10 @@ body {
   background-position: center;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .testvideo {
   position: fixed;
   right: 0;
@@ -163,17 +167,23 @@ a {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 500px) {
   .navbar-links {
-    width: 30%;
+    /* width: 30%;*/
     font-size: 1rem;
     text-transform: uppercase;
   }
   .navbar {
     height: 10%;
   }
-  .navbar-btn {
-    padding: 0.75rem 1.5rem;
+  .testvideo {
+    display: none;
+  }
+  .home-screen-btns a {
+    color: black;
+  }
+  .logo {
+    width: 500px;
   }
 }
 
