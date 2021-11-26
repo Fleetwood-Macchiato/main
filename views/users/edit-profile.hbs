@@ -1,23 +1,28 @@
-<h1 class="cafe-card-title">Edit profile</h1>
 
-<form action="/users/edit/{{_id}}" method="POST" enctype="multipart/form-data">
+  <h1 class="cafe-card-title">Edit profile</h1>
+<div class="login-form">
+  <form class="form1"
+    action="/users/edit/{{_id}}"
+    method="POST"
+    enctype="multipart/form-data"
+  >
 
-  <label for="">Username</label>
-  <input
-    type="text"
-    name="username"
-    placeholder="username"
-    value="{{username}}"
-  />
+    <label for="">Username:</label>
+    <input
+     class="pass"
+      type="text"
+      name="username"
+      placeholder="username"
+      value="{{username}}"
+    />
 
-  <br />
-  <label for="">Email</label>
-  <input type="email" name="email" placeholder="email" value="{{email}}" />
+    <label for="">Email:</label>
+    <input  class="pass" type="email" name="email" placeholder="email" value="{{email}}" />
 
-  <br />
-  <label for="">Picture</label>
-  <input type="file" name="image" value="{{image}}" />
-  <br />
-  <button type="submit">Save</button>
+    <label for="">Picture:</label>
+    <input class="pass" type="file" name="image" value="{{image}}" />
 
-</form>
+    <button class="submit-button" type="submit">Save</button>
+
+  </form>
+</div>
