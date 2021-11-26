@@ -1,6 +1,6 @@
 const axios = require("axios");
 class Api {
-  constructor(baseURL) { //baseUrl could be overwritten in the route that uses the API
+  constructor(baseURL) { 
     this.baseURL = baseURL
     this.api = axios.create(
       {
@@ -8,13 +8,11 @@ class Api {
       }
     )
   }
-  // CHANGE THE PATHS ACCORIDNG TO API DOCUEMNTATION
   getAll = () => this.api.get("/")
   getOne = (id)=> this.api.get(`/${id}`)
   createOne = (newEntityValues)=>this.api.post("/", newEntityValues)
   deleteOne = (id)=> this.api.delete(`/${id}`)
   updateOne = (id)=> this.api.put(`/${id}`)
-  // etc...
 }
 
 module.exports = new Api;

@@ -1,9 +1,6 @@
 
-<div class="other-bkgrnd">
      <div class="border">
-
   <h1 class="cafe-card-title">My Favorite Cafes</h1>
-
   {{#if userPopulated.favorites}}
     {{#each userPopulated.favorites}}
     <div class="container">
@@ -17,20 +14,16 @@
           <br>
           <p align="center">{{this.priceLevel}}</p>
           <br>
-
         <form action="/users/{{_id}}/delete" method="POST">
         <button class="navbar-btn" type="submit">Remove</button>
       </form>
         </li>
         </ul>
-        
         </div>
     </div>
-     
     {{/each}}
   </div>
 </div>
-
 {{else}}
   <p>There are no favorites</p>
 {{/if}}

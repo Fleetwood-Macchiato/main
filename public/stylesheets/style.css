@@ -16,6 +16,9 @@ body {
   background-size: cover;
   background-position: center;
 }
+.no-scroll {
+  overflow: hidden;
+}
 
 .testvideo {
   position: fixed;
@@ -226,7 +229,28 @@ footer {
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
+.edit-profile-form {
+  background-color: #ffffff;
+  width: 350px;
+  height: 450px;
+  margin: 20px auto;
+  margin-bottom: 100px;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
+.add-cafe-form {
+  background-color: #ffffff;
+  width: 350px;
+  height: 560px;
+  margin-bottom: 50px;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
 form.form1 {
   padding-top: 100px;
   display: flex;
@@ -330,12 +354,24 @@ form.form2 {
   text-align: center;
   padding: 0px -1px -2px;
 }
+.container-bg {
+  height: 67vh;
+}
 
 .cafe-card-title {
   display: flex;
   justify-content: center;
   font-size: 2rem;
   color: rgb(104, 184, 216);
+  margin-bottom: 15px;
+}
+
+.fav-card-title {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: rgb(104, 184, 216);
+  margin: 15px;
 }
 
 .bean-card-title {

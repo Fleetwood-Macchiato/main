@@ -57,7 +57,6 @@ router
   .post(multerUploader.single("image"), (req, res) => {
     const userId = req.params.id;
     const { username, email } = req.body;
-
     let image;
     if (req.file) {
       image = req.file.path;
@@ -65,7 +64,6 @@ router
       image =
         "https://t4.ftcdn.net/jpg/02/15/84/43/360_F_215844325_ttX9YiIIyeaR7Ne6EaLLjMAmy4GvPC69.jpg";
     }
-
     User.findByIdAndUpdate(userId, { username, email, image }).then((user) => {
       res.redirect(`/users/profile`);
     });
