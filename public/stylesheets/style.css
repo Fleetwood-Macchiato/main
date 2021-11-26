@@ -442,7 +442,7 @@ form.form2 {
   align-items: center;
   border-radius: 10px;
 }
-.container-bg{
+.container-bg {
   height: 67vh;
 }
 
@@ -451,8 +451,7 @@ form.form2 {
   justify-content: center;
   font-size: 2rem;
   color: rgb(104, 184, 216);
-  margin-bottom: 27px;
-  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .fav-card-title {
