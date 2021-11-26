@@ -1,7 +1,7 @@
 
   <h1 class="cafe-card-title">Edit profile</h1>
-<div class="card">
-  <form class="form"
+<div class="login-form">
+  <form class="form1"
     action="/users/edit/{{_id}}"
     method="POST"
     enctype="multipart/form-data"
@@ -9,21 +9,20 @@
 
     <label for="">Username:</label>
     <input
+     class="pass"
       type="text"
       name="username"
       placeholder="username"
       value="{{username}}"
     />
 
-    <br />
     <label for="">Email:</label>
-    <input type="email" name="email" placeholder="email" value="{{email}}" />
+    <input  class="pass" type="email" name="email" placeholder="email" value="{{email}}" />
 
-    <br />
     <label for="">Picture:</label>
-    <input type="file" name="image" value="{{image}}" />
-    <br />
-    <button type="submit">Save</button>
+    <input class="pass" type="file" name="image" value="{{image}}" />
+
+    <button class="submit-button" type="submit">Save</button>
 
   </form>
 </div>
