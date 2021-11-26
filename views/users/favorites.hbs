@@ -2,11 +2,19 @@
   <h1 class="fav-card-title">My Favorite Cafes</h1>
 
 
-{{#if userPopulated.favorites}}
-  {{#each userPopulated.favorites}}
-  <div class="container">
-   <div class="border-fav">
-  <div class="card-favorites">
+  {{#if userPopulated.favorites}}
+    {{#each userPopulated.favorites}}
+    <div class="container">
+        <div class="card card0">
+                <ul class="ul-card">
+   <h2><a class="cafe-card-title" href = "/cafes/cafe-details/{{id}}">{{name}} </h2>
+   <br>
+          <img class="cafe-img" src="{{this.imgUrl}}" /></a>
+          <br>
+          <p align="center">{{this.address}}</p>
+          <br>
+          <p align="center">{{this.priceLevel}}</p>
+          <br>
 
       <ul>
         <li class="fav-li">
