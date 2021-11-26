@@ -1,6 +1,8 @@
 
-  <h1 class="fav-card-title">My Favorite Cafes</h1>
+<div class="other-bkgrnd">
+     <div class="border">
 
+  <h1 class="cafe-card-title">My Favorite Cafes</h1>
 
   {{#if userPopulated.favorites}}
     {{#each userPopulated.favorites}}
@@ -16,23 +18,18 @@
           <p align="center">{{this.priceLevel}}</p>
           <br>
 
-      <ul>
-        <li class="fav-li">
-          <p class="bean-card-title">{{this.name}}</p>
-          <img class="bean-img" src="{{this.imgUrl}}" />
-          <p class="fav-address" align="center">{{this.address}}</p>
-          <p class="fav-price"  align="center">{{this.priceLevel}}</p>
-        
-        </li>
-      </ul>
-    </div>
-     <form action="/users/{{_id}}/delete" method="POST">
-        <button class="submit-button" type="submit">Remove</button>
+        <form action="/users/{{_id}}/delete" method="POST">
+        <button class="navbar-btn" type="submit">Remove</button>
       </form>
+        </li>
+        </ul>
+        
         </div>
-</div>
+    </div>
+     
     {{/each}}
-
+  </div>
+</div>
 
 {{else}}
   <p>There are no favorites</p>

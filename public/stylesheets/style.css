@@ -29,13 +29,13 @@ body {
   flex-direction: column;
   align-content: space-between;
   padding: 20px 0px;
-  overflow: hidden;
   /*background-color: rgb(181, 194, 194);*/
 }
 
 .form label {
   width: 150px;
   display: block;
+  margin: 2rem 0;
 }
 
 .form input {
@@ -46,6 +46,7 @@ body {
 .fields {
   display: flex;
   margin: 20px;
+  align-items: center;
 }
 .submit-button {
   background-color: transparent;
@@ -61,7 +62,7 @@ a {
 
 .logo {
   z-index: 2;
-  width: 397px;
+  width: 90vw;
 }
 
 .navbar {
@@ -70,7 +71,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0px 13px;
-  margin-top: 10px;
+  margin: 2rem 0;
 }
 
 .navbar-btn {
@@ -177,15 +178,13 @@ a {
   }
 }
 
-.cafeh4 {
+h4 {
   font-size: 0.75rem;
-  margin-bottom: 10px;
 }
 
 .logo-and-quote {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .home-container {
@@ -197,58 +196,8 @@ a {
 }
 
 .home-screen-btns {
+  padding: 5px;
   z-index: 2;
-  color: white;
-}
-
-.home-beans-btn {
-  display: inline-block;
-  padding: 0.35em 1.2em;
-  border: 0.1em solid #ffffff;
-  margin: 30em 1.3em 0.3em 0;
-  border-radius: 0.12em;
-  box-sizing: border-box;
-  text-decoration: none;
-  /*font-family:'Roboto',sans-serif;*/
-  font-weight: 300;
-  color: #ffffff;
-  text-align: center;
-  transition: all 0.2s;
-}
-a.button1:hover {
-  color: #000000;
-  background-color: #ffffff;
-}
-@media all and (max-width: 30em) {
-  a.button1 {
-    display: block;
-    margin: 0.4em auto;
-  }
-}
-
-.home-cafes-btn {
-  display: inline-block;
-  padding: 0.35em 1.2em;
-  border: 0.1em solid #ffffff;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 0.12em;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  color: #ffffff;
-  text-align: center;
-  transition: all 0.2s;
-}
-a.button1:hover {
-  color: #000000;
-  background-color: #ffffff;
-}
-@media all and (max-width: 30em) {
-  a.button1 {
-    display: block;
-    margin: 0.4em auto;
-  }
 }
 
 .quote {
@@ -346,19 +295,15 @@ form.form2 {
 }
 
 .container {
-  height: 63vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
+  flex-direction: column;
 }
-
-.beans-container {
-  height: 90vh;
-  display: flex;
-  align-items: center;
+.container-bg {
+  height: 67vh;
 }
-
 .border {
   border-radius: 10px;
   transition: border 1s;
@@ -370,53 +315,20 @@ form.form2 {
   align-items: center;
 }
 
-.border-fav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .card {
-  height: 379px;
-  width: 300px;
+  height: 380px;
+  width: 350px;
+  background: grey;
+  border-radius: 10px;
+  overflow: hidden;
   background: rgb(230, 232, 233);
   box-shadow: 0 70px 63px -60px #000000;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-}
-
-.beans-card {
-  height: 425px;
-  width: 300px;
-  background: rgb(230, 232, 233);
-  box-shadow: 0 70px 63px -60px #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-}
-
-.card1 {
-  height: 378px;
-  width: 300px;
-  background: rgb(230, 232, 233);
-  box-shadow: 0 70px 63px -60px #000000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-}
-
-.card-favorites {
-  height: 379px;
-  width: 284px;
-  background: rgb(230, 232, 233);
-  box-shadow: 0 70px 63px -60px #000000;
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  padding: 0px -1px -2px;
 }
 
 .cafe-card-title {
@@ -424,15 +336,6 @@ form.form2 {
   justify-content: center;
   font-size: 2rem;
   color: rgb(104, 184, 216);
-  margin-bottom: 27px;
-}
-
-.fav-card-title {
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: rgb(104, 184, 216);
-  margin: 15px;
 }
 
 .bean-card-title {
@@ -440,11 +343,6 @@ form.form2 {
   justify-content: center;
   font-size: 2rem;
   color: rgb(104, 184, 216);
-  margin-bottom: 27px;
-}
-
-.beanh4 {
-  margin-top: 20px;
 }
 
 .cafe-img {
@@ -459,55 +357,6 @@ form.form2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.cafe-details-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.cafe-address {
-  margin: 15px;
-}
-
-.cafe-price {
-  margin: 10px;
-}
-
-.bean-card-title {
-  font-size: 2rem;
-  color: rgb(104, 184, 216);
-}
-
-.bean-origin-details {
-  margin: 5px;
-}
-.bean-flavor-details {
-  margin: 5px;
-}
-.bean-cafe-details {
-  margin: 5px;
-}
-
-.beans-li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.fav-li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.fav-address {
-  margin: 31px;
-}
-
-.remove-fav {
-  margin: 15px;
 }
 
 * {
@@ -609,7 +458,7 @@ form.form2 {
 .reviews {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 20px;
 }
 .bold {
   font-weight: bold;
