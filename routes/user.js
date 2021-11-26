@@ -4,7 +4,6 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const User = require("../models/User.model");
 const multerUploader = require("../config/cloudinary");
 
-
 router.use(isLoggedIn);
 /* GET users listing. */
 router.get("/profile", async function (req, res, next) {
@@ -52,10 +51,10 @@ router
   .route("/edit/:id")
   .get((req, res) => {
     User.findById(req.params.id).then((user) => {
-      res.render("users/edit-profile", user);
+      res.render("users/edit-profile", { user, userLoggedIn: true });
     });
   })
-  .post( multerUploader.single("image"), (req, res) => {
+  .post(multerUploader.single("image"), (req, res) => {
     const userId = req.params.id;
     const { username, email } = req.body;
 
