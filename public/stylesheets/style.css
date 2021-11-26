@@ -16,6 +16,9 @@ body {
   background-size: cover;
   background-position: center;
 }
+.no-scroll {
+  overflow: hidden;
+}
 
 .testvideo {
   position: fixed;
@@ -439,6 +442,9 @@ form.form2 {
   align-items: center;
   border-radius: 10px;
 }
+.container-bg{
+  height: 67vh;
+}
 
 .cafe-card-title {
   display: flex;
@@ -446,6 +452,7 @@ form.form2 {
   font-size: 2rem;
   color: rgb(104, 184, 216);
   margin-bottom: 27px;
+  margin-top: 10px;
 }
 
 .fav-card-title {
@@ -631,7 +638,6 @@ form.form2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 .bold {
   font-weight: bold;
