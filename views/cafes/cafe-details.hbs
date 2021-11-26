@@ -1,29 +1,17 @@
-<div class="other-bkgrnd">
-
- <div class="container">
-<div class="card">
-   <div class="border">
-<div class="cafe-card">
-<ul>
-  <li>
-    
-    <p class="cafe-card-title">{{cafe.name}}</p>
-    <img class="cafe-img" src="{{cafe.imgUrl}}" />
-    <p>{{cafe.address}}</p>
-    <p>Price level: {{cafe.priceLevel}}</p>
-    <p>Beans used: </p>
-    <!-- <form action="/users/favorites/{{id}}" method="POST">
-      <button class="heart-btn"><img src="/images/heartlogo.jpeg" width="30px"/></button>
-   
-      </form>-->
-
-
-    {{#each cafe.beans}}
-      <div>
-    <a href="/beans/bean-details/{{id}}">{{name}} </a>      </div>
+<div class="container">
+  <div class="card card1">
+      <ul>
+        <li class="cafe-details-card">
+        <p class="cafe-card-title">{{cafe.name}}</p>
+        <img class="cafe-img" src="{{cafe.imgUrl}}" />
+        <p class="cafe-address" align="center">{{cafe.address}}</p>
+        <p class="cafe-price">{{cafe.priceLevel}}</p>
+        <p>Beans used: </p>
+          {{#each cafe.beans}}
+    <a href="/beans/bean-details/{{id}}">{{name}} </a>      
+  </div>
     {{/each}}
-
-</div></div></div></div>
+</div>
 
     <form class="form" action="/cafes/cafe-review/{{cafe._id}}" method="POST">
      <div class="fields">
