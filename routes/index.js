@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
   else userLoggedIn = false;
 
   User.find().then((users) =>
-    res.render("index", { title: "BarnaBrew", users, userLoggedIn })
+    res.render("index", { title: "BarnaBeans", users, userLoggedIn })
   );
 });
 
